@@ -1,56 +1,44 @@
 # Quick Start | Integrate SDK to HLS.js via browser
 
-1. Install `hls.js`, `mux`.
+1. Install `hls.js`.
 
   ```html
   <script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.1.5"></script>
-  <script src="https://mjs.fusioncdn.com/core/4/mux.js"></script>
   ```
 
-2. Install `driver`.
+2. Install `config`, `driver` and `hlsjs-hls` plugin.
 
   ```html
-  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@0.8.0/bundle/driver.min.js"></script>
+    <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/hlsjs-hls.min.js"></script>
   ```
 
 3. Call `mlysdk.driver.initialize()` first.
 
   ```javascript
-  const driver = mlysdk.driver.initialize({
-    client: { // here is your 'CLIENT_ID' and 'CLIENT_KEY' from mlytics portal
-      id: 'CLIENT_ID',
-      key: 'CLIENT_KEY'
-    }
-  });
+  const driver = mlysdk.driver.initialize();
   ```
 
-4. Call `hls.js` like you normally would and include loader options with our loader.
+4. call `driver.extensions.HlsjsHlsPlugin.create()` to prepare the Hls instance.
 
-  ```javascript
-  const src = 'PLAYLIST_URL';
-
-  const video = document.getElementById('video');
-  let hls = new Hls({
-    loader: driver.integrations.HLSLoader
-  });
-  hls.loadSource(src);
-  hls.attachMedia(video);
+  ```html
+  <body>
+    <video id="video" controls muted autoplay width="600"></video>
+  </body
   ```
 
-5. Call `mux.monitor()` and include Mux data options. Be sure to pass in the Hls constructor and its instance.
-
   ```javascript
-  mux.monitor(video, { // here is your 'MUX_DATA_OPTIONS' from mlytics portal
-    Hls: Hls,
-    hlsjs: hls,
-    data: {
-      env_key: '...',
-      sub_property_id: '...',
-      view_session_id: '...',
-      viewer_user_id: driver.info.sessionID,
-      custom_1: '...'
-    }
-  });
+    var src = 'PLAYLIST_URL';
+    var video = document.getElementById('video');
+
+    const driver = mlysdk.driver.initialize();
+    const plugin = driver.extensions.HlsjsHlsPlugin.create({
+      sourceUrl: src,
+      mediaElement: video,
+      playerConfig: {} // hls.js config
+    })
+    const hls = plugin.player;
   ```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.

@@ -1,18 +1,35 @@
 # Quick Start | Integrate SDK to HLS.js via vue
 
-1. Install `hls.js`, `mux`.
+1. Install `hls.js`.
 
   ```bash
-  npm install hls.js mux-embed
+  npm install hls.js
   ```
 
 2. Install `driver`.
 
   ```bash
-  npm install @mlytics/p2sp-sdk@0.8.0
+  npm install @mlytics/p2sp-sdk
   ```
 
-3. When page is loading, call `driver.initialize()` first.
+3. In `index.html`, append config script file to the tail part of `<head>` tag.
+
+  ```html
+  <header>
+    ...
+    <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+  </header>
+  ```
+
+4. To make driver use `hls.js`, call `HlsjsHlsPlugin.register()` from SDK module.
+
+  ```javascript
+  import Hls from 'hls.js';
+  import { HlsjsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+  HlsjsHlsPlugin.register(Hls);
+  ```
+
+5. When page is loading, call `driver.initialize()` first.
 
   ```javascript
   <template>
@@ -20,7 +37,7 @@
   </template>
 
   <script>
-  import { driver } from '@mlytics/p2sp-sdk/driver';
+  import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
   import Player from './components/Player.vue';
 
@@ -30,30 +47,21 @@
       Player
     },
     setup() {
-      driver.initialize({
-        client: { // here is your 'CLIENT_ID' and 'CLIENT_KEY' from mlytics portal
-          id: 'CLIENT_ID',
-          key: 'CLIENT_KEY'
-        }
-      });
+      driver.initialize();
     }
   };
   </script>
   ```
 
-4. Call `hls.js` like you normally would and include loader options with our loader.
+6. call `HlsjsHlsPlugin.create()` to prepare the Hls instance.
 
   ```javascript
   <template>
-    <video id="video" ref="videoRef" style="width: 100%; maxwidth: 500px" />
+    <video id="video" ref="videoRef" controls autoplay width=800 />
   </template>
 
   <script>
-  import Hls from 'hls.js';
-  import mux from 'mux-embed';
-
-  import { driver } from '@mlytics/p2sp-sdk/driver';
-  import { HLSLoader } from '@mlytics/p2sp-sdk/driver/integration/streaming/hls';
+  import { HlsjsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
   export default {
     name: 'Player',
@@ -64,43 +72,21 @@
     },
     mounted() {
       const src = 'PLAYLIST_URL';
-
       const video = this.$refs.videoRef;
-      if (Hls.isSupported() && !this.hls) {
-        this.hls = new Hls({
-          loader: HLSLoader,
-        });
-        this.hls.loadSource(src);
-        this.hls.attachMedia(video);
-      }
+
+      this.hls = HlsjsHlsPlugin.create({
+        sourceUrl: src,
+        mediaElement: video,
+        playerConfig: {} // hls.js config
+      });
     },
     beforeUnmount() {
-      if (this.hls) this.hls.destroy();
+      if (this.hls) {
+        this.hls.destroy();
+      }
     },
   };
   </script>
-  ```
-
-5. Call `mux.monitor()` and include Mux data options. Be sure to pass in the Hls constructor and its instance.
-
-  ```javascript
-  mounted() {
-    ...
-    if (Hls.isSupported() && !this.hls) {
-      ...
-      mux.monitor(video, { // here is your 'MUX_DATA_OPTIONS' from mlytics portal
-        Hls: Hls,
-        hlsjs: hls,
-        data: {
-          env_key: '...',
-          sub_property_id: '...',
-          view_session_id: '...',
-          viewer_user_id: driver.info.sessionID,
-          custom_1: '...'
-        }
-      });
-    }
-  },
   ```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
