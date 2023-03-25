@@ -20,26 +20,31 @@
     const driver = mlysdk.driver.initialize();
     ```
 
-4. Call `video.js` like you normally would.
+4. Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to build a **player adapter**.  
+   Passing the arguments like you normally would on creating `videojs` instance.  
 
     ```javascript
     const src = '{PLAYLIST_URL}';
 
     const video = document.getElementById('video');
-    const player = videojs(video, {
+    const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
       autoplay: true,
       controls: true,
-      sources: [{ src: src, type: 'application/vnd.apple.mpegurl' }]
+      sources: [{
+        src: src,
+        type: 'application/vnd.apple.mpegurl'
+      }]
     });
     ```
 
-5. Call `driver.extensions.VideojsHlsPlugin.adapt()` after player is ready.
+5. You may receive `videojs` instance by calling `adapter.player`.
 
     ```javascript
-    const player = videojs(video, {
+    const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
       ...
     });
-    driver.extensions.VideojsHlsPlugin.adapt(player);
+
+    const videojsPlayer = adapter.player;
     ```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
