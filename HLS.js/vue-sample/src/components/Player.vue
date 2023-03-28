@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { HlsjsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -20,12 +20,12 @@ export default {
   },
   async mounted() {
     const video = this.$refs.videoRef;
-    const { sourceUrl } = this.options;
-    this.hls = HlsjsHlsPlugin.create({
-      sourceUrl: sourceUrl,
-      mediaElement: video,
-      playerConfig: {}
+    const {sourceUrl} = this.options;
+    const adapter = driver.extensions.HlsjsHlsPlayerPlugin.create({
+      url: sourceUrl,
+      element: video
     });
+    this.hls = adapter.protocol;
   },
   async beforeUnmount() {
     if (this.hls) {

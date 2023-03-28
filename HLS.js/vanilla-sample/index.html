@@ -2,32 +2,28 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>mlytics P2SP </title>
-  <script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.1.5"></script>
-  <script src="https://sdkjs.fusioncdn.com/cehcdiphseaa0coe0c10-mlysdk.js"></script>
-  <!-- <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@0.8.0/bundle/driver.min.js"></script> -->
-  <!-- <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@0.8.0/bundle/peripheral/player/hlsjs-hls.min.js"></script> -->
-  <script src="http://127.0.0.1:9527/build/bundle/driver.min.js"></script>
-  <script src="http://127.0.0.1:9527/build/bundle/peripheral/player/hlsjs-hls.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mlytics P2SP </title>
+    <script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.1.5"></script>
+    <script src="https://sdkjs.fusioncdn.com/cehcdiphseaa0coe0c10-mlysdk.js"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/hlsjs-hls.min.js"></script>
 </head>
 
 <body>
-  <video id="video" controls muted autoplay width="600"></video>
-  <script>
-    var src = 'https://1001642588942-cloudfront-z6frgspx.d-apm.com/hls/5ec5f77c-ba77-4054-af5a-90431f7e9904.mp4/5ec5f77c-ba77-4054-af5a-90431f7e9904.m3u8';
-    var video = document.getElementById('video');
-    const driver = mlysdk.driver.initialize();
-    const plugin = driver.extensions.HlsjsHlsPlugin.create({
-      sourceUrl: src,
-      mediaElement: video,
-      playerConfig: {}
-    })
-    const hlsjsPlayer = plugin.player;
-  </script>
+    <video id="video" controls muted autoplay width="600"></video>
+    <script>
+        var src = 'https://1001642588942-cloudfront-z6frgspx.d-apm.com/hls/5ec5f77c-ba77-4054-af5a-90431f7e9904.mp4/5ec5f77c-ba77-4054-af5a-90431f7e9904.m3u8';
+        var video = document.getElementById('video');
+        const driver = mlysdk.driver.initialize();
+        const adapter = driver.extensions.HlsjsHlsPlayerPlugin.create({
+            url: src,
+            element: video
+        })
+        const hls = adapter.protocol;
+    </script>
 </body>
 
 </html>
