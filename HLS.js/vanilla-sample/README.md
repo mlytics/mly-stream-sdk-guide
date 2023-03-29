@@ -3,7 +3,7 @@
 1. Install `hls.js`.
 
     ```html
-    <script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.1.5"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.3.4"></script>
     ```
 
 2. Install `config`, `driver` and `hlsjs-hls` plugin.

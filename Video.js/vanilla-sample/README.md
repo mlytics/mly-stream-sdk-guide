@@ -3,7 +3,7 @@
 1. Install `video.js`.
 
     ```html
-    <script src="https://vjs.fusioncdn.com/7.18.0/video.min.js"></script>
+    <script src="https://vjs.fusioncdn.com/7.21.4/video.min.js"></script>
     ```
 
 2. Install `config`, `driver` and `videojs-hls` plugin.
