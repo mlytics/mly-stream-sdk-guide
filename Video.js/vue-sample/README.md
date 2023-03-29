@@ -21,14 +21,13 @@
     </header>
     ```
 
-4. To make `video.js` use HLS, call `VideojsHlsSourcePlugin.register()` from SDK module.
+4. To make `video.js` use HLS, call `VideojsHlsPlugin.register()` from SDK module.
 
     ```javascript
     import videojs from 'video.js';
-    
-    import { VideojsHlsSourcePlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+    import { VideojsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
-    VideojsHlsSourcePlugin.register(videojs);
+    VideojsHlsPlugin.register(videojs);
     ```
 
 5. When page is loading, call `driver.initialize()` first.
@@ -55,7 +54,8 @@
     </script>
     ```
 
-6. Call `video.js` like you normally would.
+6. Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to create a **player adapter**.  
+   Passing the arguments like you normally would on creating  `videojs` instance.  
 
     ```javascript
     <template>
@@ -65,8 +65,9 @@
     </template>
 
     <script>
-    import videojs from 'video.js';
     import 'video.js/dist/video-js.css';
+
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
     export default {
       name: 'Player',
@@ -79,10 +80,13 @@
         const src = '{PLAYLIST_URL}';
 
         const video = this.$refs.video;
-        this.player = videojs(video, {
+        const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
           autoplay: true,
           controls: true,
-          sources: [{ src: src, type: 'application/vnd.apple.mpegurl' }]
+          sources: [{
+            src: src,
+            type: 'application/vnd.apple.mpegurl'
+          }]
         });
       },
       beforeUnmount() {
@@ -94,29 +98,28 @@
     </script>
     ```
 
-7. Call `driver.extensions.VideojsHlsPlugin.adapt()` after player is ready.
+7. You may receive `videojs` instance by calling `adapter.player`.
 
     ```javascript
-    <script>
-    import videojs from 'video.js';
     import 'video.js/dist/video-js.css';
 
     import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
     export default {
       ...
-      mounted() {
-        const src = '{PLAYLIST_URL}';
 
-        const video = this.$refs.video;
-        this.player = videojs(video, {
+      mounted() {
+        ...
+        
+        const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
           ...
         });
-        driver.extensions.VideojsHlsPlugin.adapt(this.player);
+        this.player = adapter.player;
       },
+      
       ...
-    }
-    </script>
+
+    };
     ```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.

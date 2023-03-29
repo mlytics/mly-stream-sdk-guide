@@ -1,11 +1,9 @@
 <template>
-  <video id="video" ref="videoRef" style="width: 100%; maxWidth: 800px" :controls="options.controls"
-    :autoplay="options.autoplay" />
+  <video id="video" ref="videoRef" controls autoplay width=800 />
 </template>
 
 <script>
-import Hls from 'hls.js'
-import mux from 'mux-embed';
+import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -21,25 +19,13 @@ export default {
     };
   },
   async mounted() {
-    const { hlsConfig, source } = this.options;
-    const { src } = source;
-
     const video = this.$refs.videoRef;
-    if (video) {
-      if (Hls.isSupported() && !this.hls) {
-        this.hls = new Hls({
-          loader: hlsConfig.loader
-        });
-        this.hls.loadSource(src);
-        this.hls.attachMedia(video);
-
-        mux.monitor(video, {
-          Hls: Hls,
-          hlsjs: this.hls,
-          ...this.options.mux
-        });
-      }
-    }
+    const {sourceUrl} = this.options;
+    const adapter = driver.extensions.HlsjsHlsPlayerPlugin.create({
+      url: sourceUrl,
+      element: video
+    });
+    this.hls = adapter.protocol;
   },
   async beforeUnmount() {
     if (this.hls) {

@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 import videojs from 'video.js';
 
-import { driver, VideojsHlsSourcePlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import { driver, VideojsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 import './App.css';
 import Player from './components/Player';
 
-VideojsHlsSourcePlugin.register(videojs);
+
+VideojsHlsPlugin.register(videojs);
 
 const App = () => {
   const [options, setOptions] = useState(null);
