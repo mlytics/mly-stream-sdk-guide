@@ -21,20 +21,19 @@
     </header>
     ```
 
-4. To make `video.js` use HLS, call `VideojsHlsSourcePlugin.register()` from SDK module.
+4. To make `video.js` use HLS, call `VideojsHlsPlugin.register()` from SDK module.
 
     ```javascript
     import videojs from 'video.js';
+    import { VideojsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
-    import { VideojsHlsSourcePlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
-
-    VideojsHlsSourcePlugin.register(videojs);
+    VideojsHlsPlugin.register(videojs);
     ```
 
 5. When page is loading, call `driver.initialize()` first.
 
     ```javascript
-    import { VideojsHlsSourcePlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
     import { useEffect } from 'react';
 
@@ -53,12 +52,14 @@
     export default App;
     ```
 
-6. Call `video.js` like you normally would.
+6. Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to create a **player adapter**.  
+   Passing the arguments like you normally would on creating  `videojs` instance.  
 
     ```javascript
-    import videojs from 'video.js';
     import 'video.js/dist/video-js.css';
     import { useEffect, useRef } from 'react';
+
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
     const Player = () => {
       const videoRef = useRef(null);
@@ -69,10 +70,13 @@
 
         const video = videoRef.current;
         if (!playerRef.current) {
-          playerRef.current = videojs(video, {
+          const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
             autoplay: true,
             controls: true,
-            sources: [{ src: src, type: 'application/vnd.apple.mpegurl' }]
+            sources: [{
+              src: src,
+              type: 'application/vnd.apple.mpegurl'
+            }]
           });
         }
       }, [videoRef]);
@@ -95,10 +99,9 @@
     export default Player;
     ```
 
-7. Call` driver.extensions.VideojsHlsPlugin.adapt()` after player is ready.
+7. You may receive `videojs` instance by calling `adapter.player`.
 
     ```javascript
-    import videojs from 'video.js';
     import 'video.js/dist/video-js.css';
     import { useEffect, useRef } from 'react';
 
@@ -109,18 +112,18 @@
       const playerRef = useRef(null);
 
       useEffect(() => {
-        const src = '{PLAYLIST_URL}';
-
-        const video = videoRef.current;
+        ...
+        
         if (!playerRef.current) {
-          playerRef.current = videojs(video, {
+          const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
             ...
           });
-          driver.extensions.VideojsHlsPlugin.adapt(playerRef.current);
+          playerRef.current = adapter.player;
         }
       }, [videoRef]);
 
       ...
+    }
 
     export default Player;
     ```

@@ -5,12 +5,12 @@
 <script>
 import videojs from 'video.js';
 
-import { driver, VideojsHlsSourcePlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import { driver, VideojsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 import Player from './components/Player.vue';
 
 
-VideojsHlsSourcePlugin.register(videojs);
+VideojsHlsPlugin.register(videojs);
 
 export default {
   name: 'App',

@@ -1,54 +1,40 @@
-import { useEffect, useRef } from 'react';
-
-import Hls from 'hls.js';
-import mux from 'mux-embed';
-
-import { HLSLoader } from '@mlytics/p2sp-sdk/driver/integration/streaming/hls';
+import {useEffect, useRef} from 'react';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 const Player = (props) => {
   const videoRef = useRef(null);
   const hlsRef = useRef(null);
 
   useEffect(() => {
+    const {sourceUrl} = props.options;
+    const video = videoRef.current;
+    if (!hlsRef.current) {
+      const adapter = driver.extensions.HlsjsHlsPlayerPlugin.create({
+        url: sourceUrl,
+        element: video
+      });
+      hlsRef.current = adapter.protocol;
+    }
+  }, [videoRef]);
+
+  useEffect(() => {
     const hls = hlsRef.current;
     return () => {
       if (hls) {
-        hls.destroyed();
+        hls.destroy();
+        hlsRef.current = null;
       }
-    }
-  }, []);
+    };
+  }, [hlsRef]);
 
-  useEffect(() => {
-    const { source } = props.options;
-    const { src } = source;
-
-    const video = videoRef.current;
-    let hls = hlsRef.current;
-    if (Hls.isSupported() && !hls) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      hlsRef.current = new Hls({
-        loader: HLSLoader
-      });
-      hls = hlsRef.current;
-      hls.loadSource(src);
-      hls.attachMedia(video);
-
-      mux.monitor(video, {
-        Hls: Hls,
-        hlsjs: hls,
-        ...props.options.mux
-      });
-    }
-
-  }, [videoRef]);
-
-  const { controls, autoplay } = props.options;
   return (
     <video
-      controls={controls}
-      autoPlay={autoplay}
+      controls
+      autoPlay
       ref={videoRef}
-      style={{ width: "100%", maxWidth: "800px" }} />
+
+      width={800}
+    />
   );
-}
+};
 export default Player;
