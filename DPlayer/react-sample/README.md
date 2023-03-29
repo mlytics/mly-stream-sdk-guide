@@ -1,120 +1,129 @@
 # Quick Start | Integrate SDK to DPlayer.js via react
 
-1. Install `DPlayer`, `mux`.
+1. Install `DPlayer`.
 
-  ```bash
-  npm install dplayer mux-embed
-  ```
+    ```bash
+    npm install dplayer
+    ```
 
 2. Install `driver`.
 
-  ```bash
-  npm install @mlytics/p2sp-sdk@0.8.0
-  ```
+    ```bash
+    npm install @mlytics/p2sp-sdk
+    ```
 
-3. When page is loading, call `driver.initialize()` first.
+3. In `index.html`, append config script file to the tail part of `<head>` tag.
 
-  ```javascript
-  import { driver } from '@mlytics/p2sp-sdk/driver';
-  import { useEffect } from 'react';
+    ```html
+    <header>
+      ...
+      <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+    </header>
+    ```
 
-  import Player from './components/Player';
+4. To make `DPlayer` use HLS, call `DPlayerHlsPlugin.register()` from SDK module.
 
-  const App = () => {
-    useEffect(() => {
-      driver.initialize({
-        client: {  // here is your 'CLIENT_ID' and 'CLIENT_KEY' from mlytics portal
-          id: 'CLIENT_ID',
-          key: 'CLIENT_KEY',
-        }
-      });
-    }, []);
+    ```javascript
+    import DPlayer from 'dplayer';
+    import { DPlayerHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
-    return (
-      <><Player /></>
-    );
-  };
+    DPlayerHlsPlugin.register(DPlayer);
+    ```
 
-  export default App;
-  ```
+5. When page is loading, call `driver.initialize()` first.
 
-4. Call `DPlayer` like you normally would and include loader options with our loader.
+    ```javascript
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
-  ```javascript
-  import DPlayer from 'dplayer';
-  import Hls from 'hls.js';
-  import mux from 'mux-embed';
-  import { useEffect, useRef } from 'react';
+    import { useEffect } from 'react';
 
-  import { driver } from '@mlytics/p2sp-sdk/driver';
-  import { HLSLoader } from '@mlytics/p2sp-sdk/driver/integration/streaming/hls';
+    import Player from './components/Player';
 
-  const Player = () => {
-    const videoRef = useRef(null);
-    const dpRef = useRef(null);
+    const App = () => {
+      useEffect(() => {
+        driver.initialize();
+      }, []);
 
-    useEffect(() => {
-      const src = 'PLAYLIST_URL';
+      return (
+        <><Player /></>
+      );
+    };
 
-      const video = videoRef.current;
-      dpRef.current = new DPlayer({
-        container: video,
-        autoplay: true,
-        video: {
-          url: src,
-          type: 'customHls',
-          customType: {
-            customHls: (video) => {
-              const hls = new Hls({
-                loader: HLSLoader
-              });
-              hls.loadSource(video.src);
-              hls.attachMedia(video);
+    export default App;
+    ```
+
+6. Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to create a **player adapter**.  
+   Passing the arguments like you normally would on creating `DPlayer` instance.  
+
+    ```javascript
+    import { useEffect, useRef } from 'react';
+
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+
+    const Player = () => {
+      const videoRef = useRef(null);
+      const dpRef = useRef(null);
+
+      useEffect(() => {
+        const src = 'PLAYLIST_URL';
+
+        const video = videoRef.current;
+        if (!dpRef.current) {
+          const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
+            container: video,
+            autoplay: true,
+            video: {
+              url: src
             }
+          });
+        }
+      }, [videoRef]);
+
+      useEffect(() => {
+        const dp = dpRef.current;
+
+        return () => {
+          if (dp) {
+            dp.destroy();
+            dpRef.current = null;
           }
         }
-      });
-    }, [videoRef]);
+      }, [dpRef]);
 
-    useEffect(() => {
-      const dp = dpRef.current;
+      return (
+        <div id="video" ref={videoRef} />
+      );
+    };
 
-      return () => {
-        if (dp) {
-          dp.destroy();
-          dpRef.current = null;
+    export default Player;
+    ```
+
+7. You may receive `DPlayer` instance by calling `adapter.player`.
+
+    ```javascript
+    import { useEffect, useRef } from 'react';
+
+    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+
+    const Player = () => {
+      const videoRef = useRef(null);
+      const dpRef = useRef(null);
+
+      useEffect(() => {
+        ...
+        
+        if (!dpRef.current) {
+          const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
+            ...
+          });
+          dpRef.current = adapter.player;
         }
-      }
-    }, [dpRef]);
+      }, [videoRef]);
 
-    return (
-      <div id="video" ref={videoRef} />
-    );
-  };
-
-  export default Player;
-  ```
-
-5. Call `mux.monitor()` including Mux data options. Be sure to pass in the Hls constructor and its instance.
-
-  ```javascript
-  new DPlayer({
-    ...
-    customHls: (video) => {
       ...
-      mux.monitor(video, { // here is your 'MUX_DATA_OPTIONS' from mlytics portal
-        Hls: Hls,
-        hlsjs: hls,
-        data: {
-          env_key: '...',
-          sub_property_id: '...',
-          view_session_id: '...',
-          viewer_user_id: driver.info.sessionID,
-          custom_1: '...'
-        }
-      });
-    }
-  });
-  ```
+    };
+
+    export default Player;
+    ```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.

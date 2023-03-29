@@ -11,7 +11,6 @@
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -203,3 +202,5 @@ dist
 .env
 .yalc/
 yalc.lock
+package-lock.json
+pnpm-lock.yaml
