@@ -3,7 +3,7 @@
 1. Install `DPlayer`.
 
     ```html
-    <script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.26.0/dist/DPlayer.min.js"></script>
+    <script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.27.0/dist/DPlayer.min.js"></script>
     ```
 
 2. Install `config`, `driver` and `dplayer-hls` plugin.
