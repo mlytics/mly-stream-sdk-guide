@@ -1,8 +1,3 @@
----
-title: Introduction
-category: 63d9d34969da0c007a7219be
-slug: introduction
----
 # Overview
 
 Mlytics Stream offers a client-side, high resilience, and maximum end-client performance video delivery solution on various of players. It is closely connected to Mlytics Multi CDN technology to help you quickly implement a well-architected delivery infrastructure for your mission-critical business.
