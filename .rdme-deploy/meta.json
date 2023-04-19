@@ -34,5 +34,71 @@
         "category": "63d9d34969da0c007a7219be",
         "title": "React",
         "slug": "video-js-react"
+    },
+    {
+        "file_path": "Video.js/vue-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "Vue",
+        "slug": "video-js-vue"
+    },
+    {
+        "file_path": "HLS.js/vanilla-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "HTML",
+        "slug": "hls-js-html"
+    },
+    {
+        "file_path": "HLS.js/react-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "React",
+        "slug": "hls-js-react"
+    },
+    {
+        "file_path": "HLS.js/vue-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "Vue",
+        "slug": "hls-js-vue"
+    },
+    {
+        "file_path": "DPlayer/vanilla-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "HTML",
+        "slug": "dplayer-js-html"
+    },
+    {
+        "file_path": "DPlayer/react-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "React",
+        "slug": "dplayer-js-react"
+    },
+    {
+        "file_path": "DPlayer/vue-sample/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "Vue",
+        "slug": "dplayer-js-vue"
+    },
+    {
+        "file_path": "Documents/ANDROID SDK/ExoPlayer Integration.md",
+        "category": "6422fa4f6d944411776c9191",
+        "title": "ExoPlayer Integration",
+        "slug": "exoplayer-integration"
+    },
+    {
+        "file_path": "Documents/ANDROID SDK/Release Notes.md",
+        "category": "6422fa4f6d944411776c9191",
+        "title": "Release Notes",
+        "slug": "android-release-notes"
+    },
+    {
+        "file_path": "Documents/IOS SDK/AVPlayer Integration.md",
+        "category": "63d9d34969da0c007a7219bf",
+        "title": "AVPlayer Integration",
+        "slug": "avplayer-integration"
+    },
+    {
+        "file_path": "Documents/IOS SDK/Release Notes.md",
+        "category": "63d9d34969da0c007a7219bf",
+        "title": "Release Notes",
+        "slug": "ios-release-notes"
     }
 ]
