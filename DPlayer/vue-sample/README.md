@@ -1,118 +1,116 @@
 # Quick Start | Integrate SDK to DPlayer.js via vue
 
-1. Install `DPlayer`.
+## Install SDK
 
-    ```bash
-    npm install dplayer
-    ```
+Install the bundled packages.
 
-2. Install `driver`.
+```shell
+npm install @mlytics/p2sp-sdk
+```
 
-    ```bash
-    npm install @mlytics/p2sp-sdk
-    ```
+## Install DPlayer
 
-3. In `index.html`, append config script file to the tail part of `<head>` tag.
+Install the latest DPlayer package.
 
-    ```html
-    <header>
-      ...
-      <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-    </header>
-    ```
+```shell
+npm install dplayer
+```
 
-4. To make `DPlayer` use HLS, call `DPlayerHlsPlugin.register()` from SDK module.
+## Include Config Script
 
-    ```javascript
-    import DPlayer from 'dplayer';
-    import { DPlayerHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+In `index.html`, append config script file to the tail part of `<head>` tag.
 
-    DPlayerHlsPlugin.register(DPlayer);
-    ```
+```html public/index.html
+<header>
+  ...
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+</header>
+```
 
-5. When page is loading, call `driver.initialize()` first.
+## Bind HLS loader
 
-    ```javascript
-    <template>
-      <Player/>
-    </template>
+Bind `DPlayer` with our HLS loader plugin. To make `DPlayer` use HLS, call `DPlayerHlsPlugin.register()` from SDK module. Here's an example showing how you could bind HLS loader SDK with JavaScript.
 
-    <script>
-    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+```javascript
+import DPlayer from 'dplayer';
+import { DPlayerHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
-    import Player from './components/Player.vue';
+DPlayerHlsPlugin.register(DPlayer);
+```
 
-    export default {
-      name: 'App',
-      components: {
-        Player
-      },
-      setup() {
-        driver.initialize();
+## Initialize SDK
+
+When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
+
+```javascript
+<template>
+  <Player/>
+</template>
+
+<script>
+import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+
+import Player from './components/Player.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Player
+  },
+  setup() {
+    driver.initialize();
+  }
+};
+</script>
+```
+
+## Configure SDK Adapter
+
+In order to use SDK to download the video, we need to build the `DPlayer` instance by driver `DPlayer` Plugin .
+
+Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a player adapter, passing the same arguments as you would when creating a `DPlayer` instance.
+
+You may receive `DPlayer` instance by calling `adapter.player`. Here's an example showing how you could configure SDK Adapter with JavaScript.
+
+```javascript
+<template>
+  <div id="video" ref="videoRef" />
+</template>
+
+<script>
+import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+
+export default {
+  name: 'Player',
+  data() {
+    return {
+      dp: null,
+    };
+  },
+  mounted() {
+    const src = 'PLAYLIST_URL';
+
+    const video = this.$refs.videoRef;
+    const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
+      container: video,
+      autoplay: true,
+      video: {
+        url: src
       }
-    };
-    </script>
-    ```
+    });
+    this.dp = adapter.player;
+  },
+  beforeUnmount() {
+    if (this.dp) {
+      this.dp.destroy();
+    }
+  }
+};
+</script>
+```
 
-6. Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to create a **player adapter**.  
-   Passing the arguments like you normally would on creating `DPlayer` instance.  
+Now start the service and view the request log in your browser. You should be able to find domains with `.m3u8` and `.ts` extension from one of the CDN domains configured in the stream settings.
 
-    ```javascript
-    <template>
-      <div id="video" ref="videoRef" />
-    </template>
+## Full example
 
-    <script>
-    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
-
-    export default {
-      name: 'Player',
-      data() {
-        return {
-          dp: null,
-        };
-      },
-      mounted() {
-        const src = 'PLAYLIST_URL';
-
-        const video = this.$refs.videoRef;
-        const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
-          container: video,
-          autoplay: true,
-          video: {
-            url: src
-          }
-        });
-      },
-      beforeUnmount() {
-        if (this.dp) {
-          this.dp.destroy();
-        }
-      }
-    };
-    </script>
-    ```
-
-7. You may receive `DPlayer` instance by calling `adapter.player`.
-
-    ```javascript
-    import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
-
-    export default {
-      ...
-      
-      mounted() {
-        ...
-        
-        const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
-          ...
-        });
-        this.dp = adapter.player;
-      },
-
-      ...
-      
-    };
-    ```
-
-Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
+See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/DPlayer/vue-sample)
