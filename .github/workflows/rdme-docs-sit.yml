@@ -10,13 +10,20 @@ jobs:
   push-to-readmeio:
     runs-on: ubuntu-latest
     steps:
-      - name: Build docs
-        run: ./.rdme-deploy/build.sh
-
       - name: Check out repo 📚
         uses: actions/checkout@v3
+
+      - name: Build docs
+        run: ./.rdme-deploy/build.sh
+        shell: bash
 
       - name: Deploy Docs to sit
         uses: readmeio/rdme@v8
         with:
           rdme: docs "./dist/docs/" --key=${{ secrets.README_API_KEY }} --version=1.0-sit
+
+      - name: Delete Tag
+        run: |
+          tag=$(echo "${{ github.ref }}" | cut -d '/' -f 3)
+          git tag -d "${tag}"
+          git push origin :"${tag}"

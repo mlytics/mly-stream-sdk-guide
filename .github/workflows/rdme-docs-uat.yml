@@ -10,11 +10,11 @@ jobs:
   push-to-readmeio:
     runs-on: ubuntu-latest
     steps:
-      - name: Build docs
-        run: ./.rdme-deploy/build.sh
-
       - name: Check out repo 📚
         uses: actions/checkout@v3
+
+      - name: Build docs
+        run: ./.rdme-deploy/build.sh
 
       - name: Deploy Docs to sit
         uses: readmeio/rdme@v8
