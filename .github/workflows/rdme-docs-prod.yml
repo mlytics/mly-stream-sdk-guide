@@ -13,19 +13,27 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      - name: Run `docs` command 🚀
+      - name: remove previous backup version
         uses: readmeio/rdme@v8
         with:
-          rdme: docs "./Video.js/" --key=${{ secrets.README_API_KEY }} --version=1.0
-      - uses: readmeio/rdme@v8
+          rdme: versions:delete 1.0-prebackup
+
+      - name: backup prod version
+        uses: readmeio/rdme@v8
         with:
-          rdme: docs "./DPlayer/" --key=${{ secrets.README_API_KEY }} --version=1.0
-      - uses: readmeio/rdme@v8
+          rdme: versions:create --fork 1.0 --main false --codename previous-prod --beta false --isPublic false 1.0-prebackup
+
+      - name: fork uat to pre-release
+        uses: readmeio/rdme@v8
         with:
-          rdme: docs "./HLS.js/" --key=${{ secrets.README_API_KEY }} --version=1.0
-      - uses: readmeio/rdme@v8
+          rdme: versions:create --fork 1.0-uat --main true --beta false --isPublic true 1.0-pre
+
+      - name: remove current prod version
+        uses: readmeio/rdme@v8
         with:
-          rdme: docs "./iOS SDK/" --key=${{ secrets.README_API_KEY }} --version=1.0
-      - uses: readmeio/rdme@v8
+          rdme: versions:delete 1.0
+
+      - name: hide current prod version
+        uses: readmeio/rdme@v8
         with:
-          rdme: docs "./Documents/" --key=${{ secrets.README_API_KEY }} --version=1.0
+          rdme: versions:update --newVersion 1.0 --main true --beta false --isPublic true 1.0-pre
