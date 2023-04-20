@@ -1,0 +1,32 @@
+# You can view our full documentation here: https://docs.readme.com/docs/rdme
+name: ReadMe GitHub Action 🦉
+
+on:
+  push:
+    branches:
+      - uat
+
+jobs:
+  push-to-readmeio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo 📚
+        uses: actions/checkout@v3
+
+      - name: Build docs
+        run: ./.rdme-deploy/build.sh
+
+      - name: Deploy Docs to sit
+        uses: readmeio/rdme@v8
+        with:
+          rdme: docs "./dist/docs/" --key=${{ secrets.README_API_KEY }} --version=1.0-sit
+
+      - name: remove current uat
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:delete --key=${{ secrets.README_API_KEY }} 1.0-uat
+
+      - name: fork sit to uat
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:create --key=${{ secrets.README_API_KEY }} --fork 1.0-sit --codename uat --main false --beta false --isPublic false 1.0-uat
