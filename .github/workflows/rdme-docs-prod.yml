@@ -1,0 +1,39 @@
+# You can view our full documentation here: https://docs.readme.com/docs/rdme
+name: ReadMe GitHub Action 🦉
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push-to-readmeio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo 📚
+        uses: actions/checkout@v3
+
+      - name: remove previous backup version
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:delete --key=${{ secrets.README_API_KEY }} 1.0-prebackup
+
+      - name: backup prod version
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:create --key=${{ secrets.README_API_KEY }} --fork 1.0 --main false --codename previous-prod --beta false --isPublic false 1.0-prebackup
+
+      - name: fork uat to pre-release
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:create --key=${{ secrets.README_API_KEY }} --fork 1.0-uat --main true --beta false --isPublic true 1.0-pre
+
+      - name: remove current prod version
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:delete --key=${{ secrets.README_API_KEY }} 1.0
+
+      - name: hide current prod version
+        uses: readmeio/rdme@v8
+        with:
+          rdme: versions:update --key=${{ secrets.README_API_KEY }} --newVersion 1.0 --main true --beta false --isPublic true 1.0-pre

@@ -1,52 +1,58 @@
-# Quick Start | Integrate SDK to Videojs via browser
+# Quick Start | Integrate SDK to Video.js via browser
 
-1. Install `video.js`.
+## Install SDK
 
-    ```html
-    <script src="https://vjs.fusioncdn.com/7.21.4/video.min.js"></script>
-    ```
+Include the pre-build bundled scripts.
 
-2. Install `config`, `driver` and `videojs-hls` plugin.
+```html
+<!-- Configuration might be different along with Stream. -->
+<script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/videojs-hls.min.js"></script>
+```
 
-    ```html
-    <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
-    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/videojs-hls.min.js"></script>
-    ```
+## Install Video.js
 
-3. Call `mlysdk.driver.initialize()` first.
+Include the latest Video.js script.
 
-    ```javascript
-    const driver = mlysdk.driver.initialize();
-    ```
+```html
+<script src="https://vjs.fusioncdn.com/7.21.4/video.min.js"></script>
+```
 
-4. Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to build a **player adapter**.  
-   Passing the arguments like you normally would on creating `videojs` instance.  
+## Initialize SDK Driver
 
-    ```javascript
-    const src = '{PLAYLIST_URL}';
+To initialize SDK, we need to call `mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-    const video = document.getElementById('video');
-    const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
-      autoplay: true,
-      controls: true,
-      sources: [{
-        src: src,
-        type: 'application/vnd.apple.mpegurl'
-      }]
-    });
-    ```
+```javascript
+const driver = mlysdk.driver.initialize();
+```
 
-5. You may receive `videojs` instance by calling `adapter.player`.
+## Configure SDK Adapter
 
-    ```javascript
-    const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
-      ...
-    });
+In order to use SDK to download the video, we need to build the `VideoJS` instance by driver `VideoJS` Plugin .
 
-    const videojsPlayer = adapter.player;
-    ```
+Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to build a player adapter, passing the same arguments as you would when creating a `VideoJS` instance.
+
+You may receive `VideoJS` instance by calling `adapter.player`. Here's an example showing how you could configure SDK Adapter with JavaScript.
+
+```javascript
+const src = '{PLAYLIST_URL}';
+
+const video = document.getElementById('video');
+const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(video, {
+  autoplay: true,
+  controls: true,
+  sources: [{
+    src: src,
+    type: 'application/vnd.apple.mpegurl'
+  }]
+});
+
+const videojsPlayer = adapter.player;
+```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
 
-[Full example](./index.html)
+## Full example
+
+See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/Video.js/vanilla-sample)

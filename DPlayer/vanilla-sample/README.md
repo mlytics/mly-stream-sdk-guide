@@ -1,51 +1,57 @@
 # Quick Start | Integrate SDK to DPlayer.js via browser
 
-1. Install `DPlayer`.
+## Install SDK
 
-    ```html
-    <script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.27.0/dist/DPlayer.min.js"></script>
-    ```
+Include the pre-build bundled scripts.
 
-2. Install `config`, `driver` and `dplayer-hls` plugin.
+```html
+<!-- Configuration might be different along with Stream. -->
+<script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/hlsjs-hls.min.js"></script>
+```
 
-    ```html
-    <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
-    <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/dplayer-hls.min.js"></script>
-    ```
+## Install DPlayer
 
-3. Call `mlysdk.driver.initialize()` first.
+Include the latest DPlayer script.
 
-    ```javascript
-    const driver = mlysdk.driver.initialize();
-    ```
+```html
+<script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.26.0/dist/DPlayer.min.js"></script>
+```
 
-4. Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a **player adapter**.  
-   Passing the arguments like you normally would on creating `DPlayer` instance.  
+## Initialize SDK
 
-    ```javascript
-    const src = 'PLAYLIST_URL';
+To initialize SDK, we need to call `mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-    const video = document.getElementById('video');
-    const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
-      container: video,
-      autoplay: true,
-      controls: true,
-      video: {
-          url: src,
-      }
-    });
-    ```
+```javascript
+const driver = mlysdk.driver.initialize();
+```
 
-5. You may receive `DPlayer` instance by calling `adapter.player`.
+## Configure Player Adapter
 
-    ```javascript
-    const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
-      ...
-    });
-    const dp = adapter.player
-    ```
+In order to use SDK to download the video, we need to build the `DPlayer` instance by driver `DPlayer` Plugin .
+
+Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a player adapter.
+
+You may receive `DPlayerHlsPlayerPlugin` instance by calling `adapter.player`. Here's an example showing how you could configure SDK Adapter with JavaScript.
+
+```javascript
+const src = 'PLAYLIST_URL';
+
+const video = document.getElementById('video');
+const adapter = driver.extensions.DPlayerHlsPlayerPlugin.create({
+  container: video,
+  autoplay: true,
+  controls: true,
+  video: {
+    url: src,
+  }
+});
+const dp = adapter.player
+```
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
 
-[Full example](./index.html)
+## Full example
+
+See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/DPlayer/vanilla-sample)
