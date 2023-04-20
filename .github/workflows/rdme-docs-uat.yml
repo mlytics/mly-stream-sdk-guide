@@ -24,9 +24,9 @@ jobs:
       - name: remove current uat
         uses: readmeio/rdme@v8
         with:
-          rdme: versions:delete 1.0-uat
+          rdme: versions:delete --key=${{ secrets.README_API_KEY }} 1.0-uat
 
       - name: fork sit to uat
         uses: readmeio/rdme@v8
         with:
-          rdme: versions:create --fork 1.0-sit --codename uat --main false --beta false --isPublic false 1.0-uat
+          rdme: versions:create --key=${{ secrets.README_API_KEY }} --fork 1.0-sit --codename uat --main false --beta false --isPublic false 1.0-uat
