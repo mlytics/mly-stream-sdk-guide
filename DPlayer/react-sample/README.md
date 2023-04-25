@@ -114,6 +114,8 @@ const Player = () => {
 export default Player;
 ```
 
+Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for,  would be one of the cdn domains in stream settings rather than the origin domain.
+
 ## Full example
 
 See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/DPlayer/react-sample)
