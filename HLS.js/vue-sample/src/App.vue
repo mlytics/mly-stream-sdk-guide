@@ -5,7 +5,7 @@
 <script>
 import Player from './components/Player.vue';
 
-import Hls from 'hls.js';
+import Hls from '@mlytics/lib-hls.js';
 import {driver, HlsjsHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 

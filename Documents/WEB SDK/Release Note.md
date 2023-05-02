@@ -1,13 +1,21 @@
 # Current release
 
+## v0.12.0
+
+Fixes and Improvements
+
+1. Fix that SDK installation failure happened on Node.js 16 and higher.
+2. Fix that original ABR algorithm in LLHLS mode cannot increase the video quality.
+3. Fix that Video.js HLS rebuffering issue happened in the beginning of the video.
+
+# Previous Releases
+
 ## v0.11.0
 
 New
 
 1. Support new method of DPlayer HLS integration.
 2. Support new method of HLS.js integration.
-
-# Previous Releases
 
 ## v0.10.1
 

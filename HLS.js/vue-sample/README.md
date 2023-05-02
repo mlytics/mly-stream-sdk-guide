@@ -13,7 +13,7 @@ npm install @mlytics/p2sp-sdk
 Include the latest HLS.js script.
 
 ```bash
-npm install hls.js
+npm install @mlytics/lib-hls.js
 ```
 
 ## Include Config Script
