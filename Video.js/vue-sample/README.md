@@ -16,6 +16,25 @@ Install the latest Video.js package.
 npm install video.js
 ```
 
+## Install babel plugin
+
+Install the latest babel plugin.
+
+```bash
+npm install @babel/plugin-proposal-private-methods --save-dev
+```
+
+Update `babel.config.js` file to your project's root directory. Then, paste the following code:
+
+```javascript
+module.exports = {
+  ...
+  plugins: [
+    '@babel/plugin-proposal-private-methods'
+  ]
+}
+```
+
 ## Include Config Script
 
 In `index.html`, append config script file to the tail part of `<head>` tag.
