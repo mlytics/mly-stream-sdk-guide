@@ -13,7 +13,26 @@ npm install @mlytics/p2sp-sdk
 Include the latest HLS.js script.
 
 ```bash
-npm install hls.js
+npm install @mlytics/lib-hls.js
+```
+
+## Install babel plugin
+
+Install the latest babel plugin.
+
+```bash
+npm install @babel/plugin-proposal-private-methods --save-dev
+```
+
+Update `babel.config.js` file to your project's root directory. Then, paste the following code:
+
+```javascript
+module.exports = {
+  ...
+  plugins: [
+    '@babel/plugin-proposal-private-methods'
+  ]
+}
 ```
 
 ## Include Config Script

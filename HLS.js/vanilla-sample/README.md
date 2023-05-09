@@ -16,7 +16,7 @@ Include the pre-build bundled scripts.
 Include the latest hls.js script.
 
 ```html
-<script src="https://jsdelivr.fusioncdn.com/npm/hls.js@1.1.5"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/lib-hls.js@latest/dist/hls.min.js"></script>
 ```
 
 ## Initialize SDK Driver
