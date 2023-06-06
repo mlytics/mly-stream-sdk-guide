@@ -12,16 +12,22 @@
         "slug": "web-release-notes"
     },
     {
-        "file_path": "Documents/WEB SDK/Advanced Usage/Disable P2P mode.md",
+        "file_path": "Documents/WEB SDK/FAQ/How to disable P2P mode.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Disable P2P mode",
-        "slug": "ad-disable-p2p-mode"
+        "title": "How to disable P2P mode",
+        "slug": "how-to-disable-p2p-mode"
     },
     {
-        "file_path": "Documents/WEB SDK/Advanced Usage/Element <player>.md",
+        "file_path": "Documents/WEB SDK/FAQ/Adjust the settings of <video> element.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Element <Player>",
-        "slug": "ad-player-html-elements"
+        "title": "Adjust the settings of <video> element",
+        "slug": "adjust-the-settings-of-video-element"
+    },
+    {
+        "file_path": "Documents/WEB SDK/FAQ/Using Webpack With SDK.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "Using Webpack With SDK",
+        "slug": "using-webpack-with-sdk"
     },
     {
         "file_path": "Video.js/vanilla-sample/README.md",
