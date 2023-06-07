@@ -1,4 +1,4 @@
-Please be aware that if you are using webpack as a bundler, and will obfuscate dependent packages, please exclude our SDK or keep the class name intact.
+Kindly note that if you utilize webpack as a bundler and plan to obfuscate the dependent packages, we kindly request you to either exclude our SDK or ensure that the class name remains unchanged.
 
 Here is an example of a webpack configuration file:
 
