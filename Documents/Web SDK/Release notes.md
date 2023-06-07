@@ -1,5 +1,17 @@
 # Current release
 
+## v0.13.0
+
+Breaking Changes
+
+1. Remove old method of Video.js, HLS.js and DPlayer HLS integration which has been deprecated since v0.9.0. Please see the latest guide of player integration.
+
+Fixes and Improvements
+
+1. Video playback on iOS Safari now works for Video.js, HLS.js and DPlayer HLS integration and would fetch files from origins normally.
+
+# Previous Releases
+
 ## v0.12.0
 
 Fixes and Improvements
@@ -8,25 +20,23 @@ Fixes and Improvements
 2. Fix that original ABR algorithm in LLHLS mode cannot increase the video quality.
 3. Fix that Video.js HLS rebuffering issue happened in the beginning of the video.
 
-# Previous Releases
-
 ## v0.11.0
 
-New
+Breaking Changes
 
-1. Support new method of DPlayer HLS integration.
-2. Support new method of HLS.js integration.
+1. Support new method of HLS.js HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
+2. Support new method of DPlayer HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
 
 ## v0.10.1
 
 Fixes and Improvements
 
 1. Optimize HTTP start delay according to segment durations.
-2. Optimize HLS config when low latency mode is detected.
+2. Optimize HLS configurations when low latency mode is detected.
 
 ## v0.10.0
 
-New
+New Features
 
 1. Support LLHLS protocol and pre-buffering of audio and video separation for Video.js HLS integration.
 
@@ -37,13 +47,15 @@ Fixes and Improvements
 
 ## v0.9.1
 
-1. Support new method of Video.js HLS integration for Vue.js and React.js. Please see the MIGRATING guide after v0.9.0
+Breaking Changes
+
+1. Support new method of Video.js HLS integration for Vue.js and React.js. Please see the latest guide of player integration.
 
 ## v0.9.0
 
-Breaking changes
+Breaking Changes
 
-1. Support new method of Video.js HLS integration. The old one is deprecated now and will be removed in v0.11.0. Please see the MIGRATING guide after v0.9.0.
+1. Support new method of Video.js HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
 
 Fixes and Improvements
 
@@ -53,12 +65,12 @@ Fixes and Improvements
 
 Fixes and Improvements
 
-1. Fix that video rebuffering issue when plackback reaches the of the media.
+1. Fix that video rebuffering issue when playback reaches the end of media.
 2. Fix that CDN used at the beginning might not be used again for a period of time.
 
 ## v0.8.0
 
-New
+New Features
 
 1. Support auto and manual quality switching for Video.js HLS integration.
 
@@ -69,7 +81,7 @@ Fixes and Improvements
 
 ## v0.7.1
 
-New
+New Features
 
 1. Add P2P metering report.
 2. Allow disabling P2P mode on client side.
