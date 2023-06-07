@@ -1,33 +1,33 @@
 [
     {
-        "file_path": "Documents/WEB SDK/Introduction.md",
+        "file_path": "Documents/Web SDK/Introduction.md",
         "category": "63d9d34969da0c007a7219be",
         "title": "Introduction",
         "slug": "introduction"
     },
     {
-        "file_path": "Documents/WEB SDK/Release Note.md",
+        "file_path": "Documents/Web SDK/Release notes.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Release Notes",
+        "title": "Release notes",
         "slug": "web-release-notes"
     },
     {
-        "file_path": "Documents/WEB SDK/FAQ/How to disable P2P mode.md",
+        "file_path": "Documents/Web SDK/FAQ/How to disable P2P mode.md",
         "category": "63d9d34969da0c007a7219be",
         "title": "How to disable P2P mode",
         "slug": "how-to-disable-p2p-mode"
     },
     {
-        "file_path": "Documents/WEB SDK/FAQ/Adjust the settings of <video> element.md",
+        "file_path": "Documents/Web SDK/FAQ/I am having trouble while bundling with Webpack.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Adjust the settings of <video> element",
-        "slug": "adjust-the-settings-of-video-element"
+        "title": "I am having trouble while bundling with Webpack",
+        "slug": "i-am-having-trouble-while-bundling-with-webpack"
     },
     {
-        "file_path": "Documents/WEB SDK/FAQ/Using Webpack With SDK.md",
+        "file_path": "Documents/Web SDK/Knowledge/HTML video tag attributes.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Using Webpack With SDK",
-        "slug": "using-webpack-with-sdk"
+        "title": "HTML <video> tag attributes",
+        "slug": "html-video-tag-attributes"
     },
     {
         "file_path": "Video.js/vanilla-sample/README.md",
@@ -84,27 +84,27 @@
         "slug": "dplayer-js-vue"
     },
     {
-        "file_path": "Documents/ANDROID SDK/ExoPlayer Integration.md",
+        "file_path": "Documents/Android SDK/ExoPlayer integration.md",
         "category": "6422fa4f6d944411776c9191",
-        "title": "ExoPlayer Integration",
+        "title": "ExoPlayer integration",
         "slug": "exoplayer-integration"
     },
     {
-        "file_path": "Documents/ANDROID SDK/Release Notes.md",
+        "file_path": "Documents/Android SDK/Release notes.md",
         "category": "6422fa4f6d944411776c9191",
-        "title": "Release Notes",
+        "title": "Release notes",
         "slug": "android-release-notes"
     },
     {
-        "file_path": "Documents/IOS SDK/AVPlayer Integration.md",
+        "file_path": "Documents/iOS SDK/AVPlayer integration.md",
         "category": "63d9d34969da0c007a7219bf",
-        "title": "AVPlayer Integration",
+        "title": "AVPlayer integration",
         "slug": "avplayer-integration"
     },
     {
-        "file_path": "Documents/IOS SDK/Release Notes.md",
+        "file_path": "Documents/iOS SDK/Release notes.md",
         "category": "63d9d34969da0c007a7219bf",
-        "title": "Release Notes",
+        "title": "Release notes",
         "slug": "ios-release-notes"
     }
 ]
