@@ -1,5 +1,17 @@
 # Current release
 
+## v0.13.1
+
+New Features
+
+1. Allow disabling Mux data reporting on client side.
+
+Fixes and Improvements
+
+1. Fix that Webpack bundled SDK class name obfuscated cannot be executed correctly.
+
+# Previous Releases
+
 ## v0.13.0
 
 Breaking Changes
@@ -9,8 +21,6 @@ Breaking Changes
 Fixes and Improvements
 
 1. Video playback on iOS Safari now works for Video.js, HLS.js and DPlayer HLS integration and would fetch files from origins normally.
-
-# Previous Releases
 
 ## v0.12.0
 
