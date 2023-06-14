@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "@mlytics/lib-hls.js": "^0.1.0",
-    "@mlytics/p2sp-sdk": "^0.12.0",
+    "@mlytics/p2sp-sdk": "^0.13.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
