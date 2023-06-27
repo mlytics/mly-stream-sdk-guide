@@ -15,5 +15,5 @@ WebRTC has already been incorporated into the HTML5 standard and it is broadly d
 
 | Compatibility          | Chrome | Firefox | macOS Safari | iOS Safari | Edge | IE   |
 | ---------------------- | ------ | ------- | ------------ | :--------- | ---- | :--- |
-| Mid-stream switching   | V      | V       | V            | TBD        | V    | X    |
-| P2P WebRTC datachannel | V      | V       | V            | TBD        | X    | X    |
+| Mid-stream switching   | V      | V       | V            | V          | V    | X    |
+| P2P WebRTC datachannel | V      | V       | V            | V          | V    | X    |
