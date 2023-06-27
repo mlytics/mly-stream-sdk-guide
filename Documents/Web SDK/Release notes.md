@@ -1,5 +1,17 @@
 # Current release
 
+## v0.14.0
+
+New Features
+
+1. Support MCDN selection and P2P transmission on iOS Safari through Service Worker. Please see the deployment guide for Service Worker script.
+
+Fixes and Improvements
+
+1. Fix that LLHLS latency would permanently increase after the player moved from background to foreground.
+
+# Previous Releases
+
 ## v0.13.1
 
 New Features
@@ -10,13 +22,11 @@ Fixes and Improvements
 
 1. Fix that Webpack bundled SDK class name obfuscated cannot be executed correctly.
 
-# Previous Releases
-
 ## v0.13.0
 
 Breaking Changes
 
-1. Remove old method of Video.js, HLS.js and DPlayer HLS integration which has been deprecated since v0.9.0. Please see the latest guide of player integration.
+1. Deprecate old method of Video.js, HLS.js and DPlayer HLS integration which has been replaced since v0.9.0. Please see the latest guide for player integration.
 
 Fixes and Improvements
 
@@ -34,8 +44,8 @@ Fixes and Improvements
 
 Breaking Changes
 
-1. Support new method of HLS.js HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
-2. Support new method of DPlayer HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
+1. Support new method of HLS.js HLS integration and the old one will be deprecated in v0.13.0. Please see the latest guide for player integration.
+2. Support new method of DPlayer HLS integration and the old one will be deprecated in v0.13.0. Please see the latest guide for player integration.
 
 ## v0.10.1
 
@@ -59,13 +69,13 @@ Fixes and Improvements
 
 Breaking Changes
 
-1. Support new method of Video.js HLS integration for Vue.js and React.js. Please see the latest guide of player integration.
+1. Support new method of Video.js HLS integration for Vue.js and React.js. Please see the latest guide for player integration.
 
 ## v0.9.0
 
 Breaking Changes
 
-1. Support new method of Video.js HLS integration. The old one is deprecated now and will be removed in v0.13.0. Please see the latest guide of player integration.
+1. Support new method of Video.js HLS integration and the old one will be deprecated in v0.13.0. Please see the latest guide for player integration.
 
 Fixes and Improvements
 

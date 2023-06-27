@@ -14,9 +14,9 @@ module.exports = function () {
           mlytics: {
             test: /[\\/]node_modules[\\/]@mlytics[\\/]/,
             name: 'mlytics',
-            chunks: 'all',
-          },
-        },
+            chunks: 'all'
+          }
+        }
       },
       minimize: true,
       minimizer: [
@@ -24,13 +24,13 @@ module.exports = function () {
           exclude: /mlytics\.\w+\.js$/,
           terserOptions: {
             // original options
-          },
+          }
         }),
         new TerserPlugin({
           test: /mlytics\.\w+\.js$/,
           terserOptions: {
             keep_classnames: true
-          },
+          }
         })
       ]
     }
