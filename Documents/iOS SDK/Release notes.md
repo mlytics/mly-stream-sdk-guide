@@ -6,6 +6,8 @@ Fixes
 
 1. Update GoogleWebRTC to support arm64
 
+# Previous Releases
+
 ## v0.1.26
 
 Fixes
