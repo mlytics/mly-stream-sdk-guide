@@ -1,12 +1,12 @@
 # Current release
 
-
 ## v0.1.29
 
 Fixes
 
 1. Optimize latency when playing LLHLS video sources
 
+# Previous Releases
 
 ## v0.1.28
 
