@@ -1,0 +1,15 @@
+{
+  "name": "swproxy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@mlytics/p2sp-sdk": "^0.14.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
