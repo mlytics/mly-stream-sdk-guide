@@ -1,4 +1,4 @@
-# stream-sdk-guide
+# mly-stream-sdk-guide
 
 ## Android SDK
 
