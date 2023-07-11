@@ -138,4 +138,4 @@ Now start the service and view the request log in your browser. You should be ab
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue.js)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue.js)

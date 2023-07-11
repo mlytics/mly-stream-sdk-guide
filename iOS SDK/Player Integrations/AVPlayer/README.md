@@ -6,12 +6,12 @@
   To install with CocoaPods, modify your Podfile to use frameworks by including use_frameworks! and then add the following pods to your Podfile:
 
 ```bash
-pod 'MLYSDK',:git => 'https://github.com/mlytics/mly-stream-sdk-avplayer.git'
+pod 'MLYSDK',:git => 'https://github.com/mlytics/mly-stream-sdk-ios-avplayer.git'
 ```
 
 - **Installing with SwiftPM**
   1. In XCode click "File" > "Swift Packages" > "Add Package Dependency..."
-  2. The package repository URL is <https://github.com/mlytics/mly-stream-sdk-avplayer.git>
+  2. The package repository URL is <https://github.com/mlytics/mly-stream-sdk-ios-avplayer.git>
   3. Click next.
 
 ## Initialize the driver for your AVPlayer instance
@@ -92,5 +92,5 @@ AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
 
 ## Full example
 
-- Swift [Demo](https://github.com/mlytics/mly-stream-sdk-avplayer/tree/main/examples/swift-demo)
-- Objective-C [Demo](https://github.com/mlytics/mly-stream-sdk-avplayer/tree/main/examples/objective-c-demo)
+- Swift [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/examples/swift-demo)
+- Objective-C [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/examples/objective-c-demo)

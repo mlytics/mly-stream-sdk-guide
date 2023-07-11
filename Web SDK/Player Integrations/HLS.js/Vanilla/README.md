@@ -50,4 +50,4 @@ Now start the service and try to watch request logs in a browser. You could find
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/Vanilla)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/Vanilla)
