@@ -24,7 +24,7 @@ Alternatively, if your website is built with a frontend framework such as [Vue.j
 import '@mlytics/p2sp-sdk/driver/integration/streaming/hls/swproxy/server';
 ```
 
-After creating the above file, use a module bundler like Webpack to bundle that file into a standalone script. You might want to name the bundled script `swproxy.min.js`. For further Webpack configuration and bundling steps, see [Example](https://github.com/mlytics/stream-sdk-guide/tree/main/Web%20SDK/Knowledge/SDK%20service%20worker%20deployment).
+After creating the above file, use a module bundler like Webpack to bundle that file into a standalone script. You might want to name the bundled script `swproxy.min.js`. For further Webpack configuration and bundling steps, see [Example](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Knowledge/SDK%20service%20worker%20deployment).
 
 ## Deploy the script under a proxy
 
