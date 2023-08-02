@@ -1,19 +1,19 @@
 # Quick Start | Integrate SDK to HLS.js via Vue.js
 
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
 ## Install HLS.js
 
 Install the latest `HLS.js` package.
 
 ```bash
 npm install @mlytics/lib-hls.js
+```
+
+## Install SDK
+
+Install the bundled package.
+
+```bash
+npm install @mlytics/p2sp-sdk
 ```
 
 ## Install babel plugin

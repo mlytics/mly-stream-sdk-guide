@@ -1,5 +1,13 @@
 # Quick Start | Integrate SDK to DPlayer.js via browser
 
+## Install DPlayer
+
+Include the latest `DPlayer` script.
+
+```html
+<script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+```
+
 ## Install SDK
 
 Include the pre-built bundled scripts.
@@ -8,14 +16,6 @@ Include the pre-built bundled scripts.
 <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/dplayer-hls.min.js"></script>
-```
-
-## Install DPlayer
-
-Include the latest `DPlayer` script.
-
-```html
-<script src="https://jsdelivr.fusioncdn.com/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
 ```
 
 ## Initialize SDK
