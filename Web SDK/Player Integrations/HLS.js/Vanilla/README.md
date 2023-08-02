@@ -1,5 +1,13 @@
 # Quick Start | Integrate SDK to HLS.js via browser
 
+## Install HLS.js
+
+Include the latest `HLS.js` script.
+
+```html
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/lib-hls.js@latest/dist/hls.min.js"></script>
+```
+
 ## Install SDK
 
 Include the pre-built bundled scripts.
@@ -8,14 +16,6 @@ Include the pre-built bundled scripts.
 <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/hlsjs-hls.min.js"></script>
-```
-
-## Install HLS.js
-
-Include the latest `HLS.js` script.
-
-```html
-<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/lib-hls.js@latest/dist/hls.min.js"></script>
 ```
 
 ## Initialize SDK
