@@ -1,19 +1,19 @@
 # Quick Start | Integrate SDK to DPlayer via Vue.js
 
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
 ## Install DPlayer
 
 Install the latest `DPlayer` package.
 
 ```bash
 npm install dplayer
+```
+
+## Install SDK
+
+Install the bundled package.
+
+```bash
+npm install @mlytics/p2sp-sdk
 ```
 
 ## Install babel plugin

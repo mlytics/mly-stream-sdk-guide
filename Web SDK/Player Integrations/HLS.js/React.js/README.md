@@ -1,19 +1,19 @@
 # Quick Start | Integrate SDK to HLS.js via React.js
 
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
 ## Install HLS.js
 
 Include the latest `HLS.js` package.
 
 ```bash
 npm install @mlytics/lib-hls.js
+```
+
+## Install SDK
+
+Install the bundled package.
+
+```bash
+npm install @mlytics/p2sp-sdk
 ```
 
 ## Include config script

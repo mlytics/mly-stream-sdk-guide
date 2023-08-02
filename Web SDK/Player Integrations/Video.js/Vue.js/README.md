@@ -1,19 +1,19 @@
 # Quick Start | Integrate SDK to Video.js via Vue.js
 
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
 ## Install Video.js
 
 Install the latest `Video.js` package.
 
 ```bash
 npm install video.js
+```
+
+## Install SDK
+
+Install the bundled package.
+
+```bash
+npm install @mlytics/p2sp-sdk
 ```
 
 ## Install babel plugin
