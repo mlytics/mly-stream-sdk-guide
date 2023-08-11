@@ -2,10 +2,11 @@
 
 ## Install Video.js
 
-Include the latest `Video.js` script.
+Include `Video.js` script.
+> We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
 
 ```html
-<script src="https://vjs.fusioncdn.com/7.21.4/video.min.js"></script>
+<script src="https://vjs.fusioncdn.com/7.21.5/video.min.js"></script>
 ```
 
 ## Install SDK

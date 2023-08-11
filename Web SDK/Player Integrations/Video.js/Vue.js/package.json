@@ -31,7 +31,7 @@
   "dependencies": {
     "@mlytics/p2sp-sdk": "^0.14.0",
     "core-js": "^3.8.3",
-    "video.js": "^7.21.4",
+    "video.js": "^7.21.5",
     "vue": "^3.2.13"
   },
   "devDependencies": {

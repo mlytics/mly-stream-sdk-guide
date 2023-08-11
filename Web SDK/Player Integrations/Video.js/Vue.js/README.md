@@ -2,10 +2,11 @@
 
 ## Install Video.js
 
-Install the latest `Video.js` package.
+Install `Video.js` package.
+> We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
 
 ```bash
-npm install video.js
+npm install video.js@7.21.5
 ```
 
 ## Install SDK
