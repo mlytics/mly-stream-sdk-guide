@@ -5,12 +5,13 @@
 </template>
 
 <script>
+/* eslint-disable vue/multi-word-component-names */
+
 import 'video.js/dist/video-js.css';
 
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
     name: 'Player',
     props: {
         options: {
@@ -20,16 +21,16 @@ export default {
     data() {
         return {
             player: null
-        }
+        };
     },
     mounted() {
         const adapter = driver.extensions.VideojsHlsPlayerPlugin.create(this.$refs.video, this.options);
-        this.player = adapter.player
+        this.player = adapter.player;
     },
     beforeUnmount() {
         if (this.player) {
             this.player.dispose();
         }
     }
-}
+};
 </script>

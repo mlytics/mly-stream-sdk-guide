@@ -21,10 +21,10 @@ npm install @mlytics/p2sp-sdk
 In `index.html`, append config script file to the tail part of `<head>` tag.
 
 ```html
-<header>
+<head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</header>
+</head>
 ```
 
 ## Bind HLS loader
@@ -33,7 +33,7 @@ Bind `DPlayer` with our HLS loader plugin. To make `DPlayer` use HLS, call `DPla
 
 ```javascript
 import DPlayer from 'dplayer';
-import { DPlayerHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {DPlayerHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
 DPlayerHlsPlugin.register(DPlayer);
 ```
@@ -43,9 +43,9 @@ DPlayerHlsPlugin.register(DPlayer);
 When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
 ```javascript
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 import Player from './components/Player';
 
@@ -71,9 +71,9 @@ Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a player adapt
 You may receive `DPlayer` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
 ```javascript
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
 const Player = () => {
   const videoRef = useRef(null);

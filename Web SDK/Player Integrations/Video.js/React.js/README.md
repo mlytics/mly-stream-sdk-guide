@@ -22,10 +22,10 @@ npm install @mlytics/p2sp-sdk
 In `index.html`, append config script file to the tail part of `<head>` tag.
 
 ```html
-<header>
+<head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</header>
+</head>
 ```
 
 ## Bind HLS loader
@@ -34,7 +34,7 @@ Bind `Video.js` with our HLS loader plugin. To make `Video.js` use HLS, call `Vi
 
 ```javascript
 import videojs from 'video.js';
-import { VideojsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import {VideojsHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 VideojsHlsPlugin.register(videojs);
 ```
@@ -44,9 +44,9 @@ VideojsHlsPlugin.register(videojs);
 When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
 ```javascript
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 import Player from './components/Player';
 
@@ -74,9 +74,9 @@ You may receive `Video.js` instance by calling `adapter.player`. Here's an examp
 ```javascript
 import 'video.js/dist/video-js.css';
 
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 const Player = () => {
   const videoRef = useRef(null);

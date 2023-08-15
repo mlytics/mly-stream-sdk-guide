@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     '@babel/plugin-proposal-private-methods'
   ]
-}
+};
 ```
 
 ## Include config script
@@ -40,10 +40,10 @@ module.exports = {
 In `index.html`, append config script file to the tail part of `<head>` tag.
 
 ```html
-<header>
+<head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</header>
+</head>
 ```
 
 ## Bind HLS loader
@@ -52,7 +52,7 @@ Bind `DPlayer` with our HLS loader plugin. To make `DPlayer` use HLS, call `DPla
 
 ```javascript
 import DPlayer from 'dplayer';
-import { DPlayerHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {DPlayerHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
 DPlayerHlsPlugin.register(DPlayer);
 ```
@@ -67,7 +67,7 @@ When page is loading, call `driver.initialize()` first. Here's an example showin
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
 import Player from './components/Player.vue';
 
@@ -97,7 +97,7 @@ You may receive `DPlayer` instance by calling `adapter.player`. Here's an exampl
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
 
 export default {
   name: 'Player',
