@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     '@babel/plugin-proposal-private-methods'
   ]
-}
+};
 ```
 
 ## Include config script
@@ -40,10 +40,10 @@ module.exports = {
 In `index.html`, append config script file to the tail part of `<head>` tag.
 
 ```html
-<header>
+<head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</header>
+</head>
 ```
 
 ## Bind HLS loader
@@ -52,7 +52,7 @@ To make driver use HLS, call `HlsjsHlsPlugin.register()` from SDK module. Here's
 
 ```javascript
 import Hls from 'hls.js';
-import { HlsjsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {HlsjsHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 HlsjsHlsPlugin.register(Hls);
 ```
@@ -67,7 +67,7 @@ When page is loading, call `driver.initialize()` first. Here's an example showin
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 import Player from './components/Player.vue';
 
@@ -97,7 +97,7 @@ You may receive `HLS.js` instance by calling `adapter.protocol`. Here's an examp
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 export default {
   name: 'Player',
@@ -108,8 +108,8 @@ export default {
   },
   mounted() {
     const src = 'PLAYLIST_URL';
-    const video = this.$refs.videoRef;
 
+    const video = this.$refs.videoRef;
     const adapter = driver.extensions.HlsjsHlsPlayerPlugin.create({
       url: src,
       element: video
