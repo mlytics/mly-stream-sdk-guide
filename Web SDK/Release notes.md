@@ -1,5 +1,16 @@
 # Current release
 
+## v0.15.0
+
+New Features
+
+1. Support SDK integration of new player Radiant Media Player(RMP) with HLS.
+2. Allow disabling loader or monitor for player on client side.
+
+Fixes and Improvements
+
+1. HLS catch-up function is enabled by default even under regular latency. 
+
 ## v0.14.0
 
 New Features
@@ -16,7 +27,7 @@ Fixes and Improvements
 
 New Features
 
-1. Allow disabling Mux data reporting on client side.
+1. Allow disabling monitor reporting on client side.
 
 Fixes and Improvements
 

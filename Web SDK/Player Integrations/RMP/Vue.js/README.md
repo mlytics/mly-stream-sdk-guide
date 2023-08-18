@@ -54,7 +54,7 @@ In `index.html`, append config script file to the tail part of `<head>` tag.
 Add `RMP` into our SDK. To do this, use `RadiantMPHlsPlugin.register()` from SDK module. Here's an example showing how you could register the `RMP`:
 
 ```javascript
-import { RadiantMPHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
+import {RadiantMPHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
 
 RadiantMPHlsPlugin.register(window.RadiantMP);
 ```
@@ -69,7 +69,7 @@ When page is loading, call `driver.initialize()` first. Here's an example showin
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
 
 import Player from './components/Player.vue';
 
@@ -99,7 +99,7 @@ You may receive `RMP` instance by calling `adapter.player`. Here's an example sh
 </template>
 
 <script>
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
 
 export default {
   name: 'Player',
