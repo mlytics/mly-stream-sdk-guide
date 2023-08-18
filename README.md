@@ -3,11 +3,11 @@
 ## Android SDK
 
 - [ExoPlayer](<./Android SDK/Player Integrations/ExoPlayer/>)
-  
+
 ## iOS SDK
 
 - [AVPlayer](<./iOS SDK/Player Integrations/AVPlayer/>)
-  
+
 ## Web SDK
 
 - **Video.js**
@@ -22,3 +22,7 @@
   - [Vanilla](<./Web SDK/Player Integrations/DPlayer/Vanilla/>)
   - [Vue](<./Web SDK/Player Integrations/DPlayer/Vue.js/>)
   - [React](<./Web SDK/Player Integrations/DPlayer/React.js/>)
+- **RMP**
+  - [Vanilla](<./Web SDK/Player Integrations/RMP/Vanilla/>)
+  - [Vue](<./Web SDK/Player Integrations/RMP/Vue.js/>)
+  - [React](<./Web SDK/Player Integrations/RMP/React.js/>)

@@ -1,13 +1,13 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
 import 'video.js/dist/video-js.css';
 
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
 const Player = (props) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
-    const { options } = props;
+    const {options} = props;
 
     useEffect(() => {
         const video = videoRef.current;
@@ -16,7 +16,6 @@ const Player = (props) => {
             playerRef.current = adapter.player;
         } else {
             const player = playerRef.current;
-            player.autoplay(options.autoplay);
             player.src(options.sources);
         }
     }, [options, videoRef]);
@@ -32,7 +31,7 @@ const Player = (props) => {
     }, [playerRef]);
 
     return <div data-vjs-player>
-        <video ref={videoRef} className="video-js" style={{ width: "100%", maxWidth: "800px" }} />
+        <video ref={videoRef} className="video-js" style={{width: "100%", maxWidth: "800px"}} />
     </div>;
-}
+};
 export default Player;

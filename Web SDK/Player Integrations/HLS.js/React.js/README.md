@@ -21,10 +21,10 @@ npm install @mlytics/p2sp-sdk
 In `index.html`, append config script file to the tail part of `<head>` tag.
 
 ```html
-<header>
+<head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</header>
+</head>
 ```
 
 ## Bind HLS loader
@@ -33,7 +33,7 @@ To make driver use HLS, call `HlsjsHlsPlugin.register()` from SDK module. Here's
 
 ```javascript
 import Hls from 'hls.js';
-import { HlsjsHlsPlugin } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {HlsjsHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 HlsjsHlsPlugin.register(Hls);
 ```
@@ -43,9 +43,9 @@ HlsjsHlsPlugin.register(Hls);
 When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
 ```javascript
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 import Player from './components/Player';
 
@@ -71,9 +71,9 @@ Call `driver.extensions.HlsjsHlsPlayerPlugin.create()` to build a player adapter
 You may receive `HLS.js` instance by calling `adapter.protocol`. Here's an example showing how you could create player adapter with JavaScript.
 
 ```javascript
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
-import { driver } from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
+import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
 
 const Player = () => {
   const videoRef = useRef(null);

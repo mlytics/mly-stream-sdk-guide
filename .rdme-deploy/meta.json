@@ -60,6 +60,24 @@
         "slug": "web-player-dplayer-reactjs"
     },
     {
+        "file_path": "Web SDK/Player Integrations/RMP/Vanilla/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "HTML",
+        "slug": "web-player-rmp-vanilla"
+    },
+    {
+        "file_path": "Web SDK/Player Integrations/RMP/Vue.js/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "Vue.js",
+        "slug": "web-player-rmp-vuejs"
+    },
+    {
+        "file_path": "Web SDK/Player Integrations/RMP/React.js/README.md",
+        "category": "63d9d34969da0c007a7219be",
+        "title": "React.js",
+        "slug": "web-player-rmp-reactjs"
+    },
+    {
         "file_path": "Web SDK/Knowledge/HTML video tag attributes.md",
         "category": "63d9d34969da0c007a7219be",
         "title": "HTML <video> tag attributes",
