@@ -4,13 +4,13 @@ module.exports = {
         node: true,
         browser: true
     },
+    parserOptions: {
+        parser: '@babel/eslint-parser'
+    },
     extends: [
         'plugin:vue/vue3-essential',
         'eslint:recommended',
     ],
-    parserOptions: {
-        parser: '@babel/eslint-parser'
-    },
     rules: {
         'semi': [
             'error', 'always'

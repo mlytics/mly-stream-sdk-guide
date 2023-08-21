@@ -29,4 +29,5 @@ const Player = (props) => {
 
     return <div ref={videoRef} id="video" style={{width: "100%", maxWidth: "800px"}} />;
 };
+
 export default Player;
