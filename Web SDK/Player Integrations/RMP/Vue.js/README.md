@@ -11,6 +11,17 @@ In `public/index.html` file, add `RMP` as an external library.
 </head>
 ```
 
+## Include config script
+
+In `index.html`, append config script file to the tail part of `<head>` tag.
+
+```html
+<head>
+  ...
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+</head>
+```
+
 ## Install SDK
 
 Install the bundled package.
@@ -36,17 +47,6 @@ module.exports = {
     '@babel/plugin-proposal-private-methods'
   ]
 }
-```
-
-## Include config script
-
-In `index.html`, append config script file to the tail part of `<head>` tag.
-
-```html
-<head>
-  ...
-  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
-</head>
 ```
 
 ## Bind SDK

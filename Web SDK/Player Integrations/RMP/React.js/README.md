@@ -11,14 +11,6 @@ In `public/index.html` file, add `RMP` as an external library.
 </head>
 ```
 
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
 ## Include config script
 
 In `public/index.html`, append config script file to the tail part of `<head>` tag.
@@ -28,6 +20,14 @@ In `public/index.html`, append config script file to the tail part of `<head>` t
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
 </head>
+```
+
+## Install SDK
+
+Install the bundled package.
+
+```bash
+npm install @mlytics/p2sp-sdk
 ```
 
 ## Bind SDK

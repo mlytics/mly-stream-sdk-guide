@@ -1,6 +1,6 @@
-import {useEffect, useRef} from 'react';
-
 import 'video.js/dist/video-js.css';
+
+import {useEffect, useRef} from 'react';
 
 import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/videojs/streaming/hls/bundle';
 
@@ -34,4 +34,5 @@ const Player = (props) => {
         <video ref={videoRef} className="video-js" style={{width: "100%", maxWidth: "800px"}} />
     </div>;
 };
+
 export default Player;
