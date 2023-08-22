@@ -1,11 +1,19 @@
 # Current release
 
+## v0.15.1
+
+New Features
+
+1. Allow to adjust configs of HLS latency for each playback on client side.
+
+# Previous releases
+
 ## v0.15.0
 
 New Features
 
 1. Support SDK integration of new player Radiant Media Player(RMP) with HLS.
-2. Allow disabling loader or monitor for player on client side.
+2. Allow to disable loader or monitor for each playback on client side.
 
 Fixes and Improvements
 
@@ -21,13 +29,11 @@ Fixes and Improvements
 
 1. Fix that LLHLS latency would permanently increase after the player moved from background to foreground.
 
-# Previous releases
-
 ## v0.13.1
 
 New Features
 
-1. Allow disabling monitor reporting on client side.
+1. Allow to disable monitor reporting on client side.
 
 Fixes and Improvements
 
@@ -115,4 +121,4 @@ Fixes and Improvements
 New Features
 
 1. Add P2P metering report.
-2. Allow disabling P2P mode on client side.
+2. Allow to disable P2P mode on client side.
