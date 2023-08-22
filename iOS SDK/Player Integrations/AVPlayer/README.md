@@ -92,5 +92,5 @@ AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
 
 ## Full example
 
-- Swift [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/examples/swift-demo)
-- Objective-C [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/examples/objective-c-demo)
+- Swift [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/Examples/Swift-Player)
+- Objective-C [Demo](https://github.com/mlytics/mly-stream-sdk-ios-avplayer/tree/main/Examples/ObjectiveC-Player)

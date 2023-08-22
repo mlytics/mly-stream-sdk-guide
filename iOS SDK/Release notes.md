@@ -2,7 +2,7 @@
 
 ## v0.1.27
 
-Fixes
+Fixes and Improvements
 
 1. Update GoogleWebRTC to support arm64
 
@@ -10,37 +10,39 @@ Fixes
 
 ## v0.1.26
 
-Fixes
+New Features
+
+1. Support ScrollView
+
+Fixes and Improvements
 
 1. Optimize latency when playing LLHLS video sources
 2. Fix P2P reporting
 
-New
-
-1. Support ScrollView
-
 ## v0.1.24
 
-Fixes
-
-1. Fix Tacker connection bug
-
-New
+New Features
 
 1. Add OC demo
 
+Fixes and Improvements
+
+1. Fix Tacker connection bug
+
 ## v0.1.23
 
-New
+New Features
 
 1. Support LLHLS
 
 ## v0.1.22
 
-Fixes
+Fixes and Improvements
 
 1. Fix P2P bug when fetching data
 
 ## v0.1.21
+
+New Features
 
 1. Initial release
