@@ -77,5 +77,5 @@ player.setMediaItem(MediaItem.fromUri(url));
 
 ## Full example
 
-- Kotlin [Demo](https://github.com/mlytics/mly-stream-sdk-android-exoplayer/tree/main/demo/kotlin)
-- Java [Demo](https://github.com/mlytics/mly-stream-sdk-android-exoplayer/tree/main/demo/java)
+- Kotlin [Demo](https://github.com/mlytics/mly-stream-sdk-android-exoplayer/tree/main/examples/kotlin-player)
+- Java [Demo](https://github.com/mlytics/mly-stream-sdk-android-exoplayer/tree/main/examples/java-player)
