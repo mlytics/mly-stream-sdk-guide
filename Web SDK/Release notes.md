@@ -1,12 +1,18 @@
 # Current release
 
+## v0.15.2
+
+Fixes and Improvements
+
+1. Fix that Video.js HLS quality selector crashed after source is changed.
+
+# Previous releases
+
 ## v0.15.1
 
 New Features
 
 1. Allow to adjust configs of HLS latency for each playback on client side.
-
-# Previous releases
 
 ## v0.15.0
 

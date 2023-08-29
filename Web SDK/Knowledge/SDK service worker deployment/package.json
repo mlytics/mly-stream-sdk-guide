@@ -6,7 +6,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@mlytics/p2sp-sdk": "^0.15.1"
+    "@mlytics/p2sp-sdk": "^0.15.2"
   },
   "devDependencies": {
     "webpack": "^5.88.1",
