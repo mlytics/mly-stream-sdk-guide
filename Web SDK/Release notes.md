@@ -1,12 +1,18 @@
 # Current release
 
+## v0.15.3
+
+Fixes and Improvements
+
+1. Fix that SDK does not stop requesting segments after player paused.
+
+# Previous releases
+
 ## v0.15.2
 
 Fixes and Improvements
 
 1. Fix that Video.js HLS quality selector crashed after source is changed.
-
-# Previous releases
 
 ## v0.15.1
 
