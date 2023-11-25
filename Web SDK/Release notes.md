@@ -1,12 +1,23 @@
 # Current release
 
+## v0.16.0
+
+New Features
+
+1. Support the measurement of bandwidth in the regular SDK reports for each CDN.
+
+Fixes and Improvements
+
+1. Fix that viewer experience scores were underestimated due to abnormal SDK startup.
+2. Optimize the domain used to fetch configurations to reduce the chance of startup failure.
+
+# Previous releases
+
 ## v0.15.3
 
 Fixes and Improvements
 
 1. Fix that SDK does not stop requesting segments after player paused.
-
-# Previous releases
 
 ## v0.15.2
 

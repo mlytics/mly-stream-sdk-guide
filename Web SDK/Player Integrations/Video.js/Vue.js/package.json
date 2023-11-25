@@ -29,7 +29,7 @@
     "not ie 11"
   ],
   "dependencies": {
-    "@mlytics/p2sp-sdk": "^0.15.3",
+    "@mlytics/p2sp-sdk": "^0.16.0",
     "core-js": "^3.8.3",
     "video.js": "^7.21.5",
     "vue": "^3.2.13"
