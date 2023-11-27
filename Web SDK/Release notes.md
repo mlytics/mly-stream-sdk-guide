@@ -1,12 +1,29 @@
 # Current release
 
+## v0.16.1
+
+Fixes and Improvements
+
+1. Fix that viewer experience scores are duplicately reported when the video source is not found.
+
+# Previous releases
+
+## v0.16.0
+
+New Features
+
+1. Support the measurement of bandwidth in the regular SDK reports for each CDN.
+
+Fixes and Improvements
+
+1. Fix that viewer experience scores are underestimated due to abnormal SDK startup.
+2. Optimize the domain used to fetch configurations to reduce the chance of startup failure.
+
 ## v0.15.3
 
 Fixes and Improvements
 
 1. Fix that SDK does not stop requesting segments after player paused.
-
-# Previous releases
 
 ## v0.15.2
 
