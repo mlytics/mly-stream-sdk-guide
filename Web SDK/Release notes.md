@@ -4,7 +4,7 @@
 
 Fixes and Improvements
 
-1. Fix that viewer experience scores are duplicately reported when the video source is not found.
+1. Fix that viewer experience metrics are duplicately reported when the video source is not found.
 
 # Previous releases
 
@@ -16,7 +16,7 @@ New Features
 
 Fixes and Improvements
 
-1. Fix that viewer experience scores are underestimated due to abnormal SDK startup.
+1. Fix that viewer experience metrics are underestimated due to abnormal SDK startup.
 2. Optimize the domain used to fetch configurations to reduce the chance of startup failure.
 
 ## v0.15.3
