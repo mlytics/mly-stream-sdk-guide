@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@mlytics/p2sp-sdk": "^0.16.1",
+    "@mlytics/p2sp-sdk": "0.16.2",
     "dplayer": "^1.27.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
