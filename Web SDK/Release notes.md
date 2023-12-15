@@ -1,12 +1,19 @@
 # Current release
 
+## v0.16.2
+
+Fixes and Improvements
+
+1. Fix that HLS.js demux worker failure when SDK is compiled via the frontend tool Vite.
+2. Optimize HLS.js configurations to use relative latency by default under regular latency.
+
+# Previous releases
+
 ## v0.16.1
 
 Fixes and Improvements
 
 1. Fix that viewer experience metrics are duplicately reported when the video source is not found.
-
-# Previous releases
 
 ## v0.16.0
 
@@ -98,7 +105,7 @@ Breaking Changes
 Fixes and Improvements
 
 1. Optimize HTTP start delay according to segment durations.
-2. Optimize HLS configurations when low latency mode is detected.
+2. Optimize HLS.js configurations when low latency mode is detected.
 
 ## v0.10.0
 
