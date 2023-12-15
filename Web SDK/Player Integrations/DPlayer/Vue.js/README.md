@@ -76,7 +76,7 @@ export default {
   components: {
     Player
   },
-  setup() {
+  beforeMount() {
     driver.initialize();
   }
 };

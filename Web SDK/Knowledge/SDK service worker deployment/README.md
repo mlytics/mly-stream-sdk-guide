@@ -6,7 +6,7 @@ To resolve this issue, we have introduced the technology of [Service Worker](htt
 
 # Preparation
 
-Please ensure that you have the permission to deploy the Service Worker script under a static file proxy like nginx server and your video website must be configured to be accessed via **HTTPS**. Additionally, please note that the deployment example below will use HLS as a streaming media communication protocol.
+Please ensure that you have the permission to deploy the Service Worker script under a static file proxy like NGINX server and your video website must be configured to be accessed via **HTTPS**. Additionally, please note that the deployment example below will use HLS as a streaming media communication protocol.
 
 # Deployment
 
