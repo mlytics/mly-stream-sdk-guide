@@ -1,19 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
-import DPlayer from 'dplayer';
-
-import {driver, DPlayerHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/dplayer/streaming/hls/bundle';
-
 import './App.css';
 import Player from './components/Player';
 
-DPlayerHlsPlugin.register(DPlayer);
-
-function App() {
+const App = () => {
     const [options, setOptions] = useState(null);
-
     useEffect(() => {
-        driver.initialize();
+        self.mlysdk.driver.initialize();
         setOptions({
             autoplay: true,
             video: {
@@ -29,6 +22,6 @@ function App() {
             </header>
         </div>
     );
-}
+};
 
 export default App;
