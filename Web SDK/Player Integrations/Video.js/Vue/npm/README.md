@@ -1,4 +1,8 @@
-# Quick Start | Integrate SDK to Video.js via Vue.js
+# Quick Start | Integrate SDK to Video.js via Vue
+
+> This method is not recommended due to compatibility issues.  
+> Please include `Mlytics SDK` and `Video.js` scripts in `public/index.html` instead.  
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/React/html/README.md).
 
 ## Install Video.js
 
@@ -139,4 +143,4 @@ Now start the service and view the request log in your browser. You should be ab
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue.js)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue/npm)
