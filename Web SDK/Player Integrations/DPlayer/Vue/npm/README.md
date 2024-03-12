@@ -1,4 +1,8 @@
-# Quick Start | Integrate SDK to DPlayer via Vue.js
+# Quick Start | Integrate SDK to DPlayer via Vue
+
+> This method is not recommended due to compatibility issues.  
+> Please include `Mlytics SDK` and `DPlayer` scripts in `public/index.html` instead.  
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/Vue/html/README.md).
 
 ## Install DPlayer
 
@@ -132,4 +136,4 @@ Now start the service and view the request log in your browser. You should be ab
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/Vue.js)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/Vue/npm)
