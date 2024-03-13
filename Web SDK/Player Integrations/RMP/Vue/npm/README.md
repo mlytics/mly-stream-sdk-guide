@@ -1,4 +1,8 @@
-# Quick Start | Integrate SDK to Radiant Media Player(RMP) via Vue.js
+# Quick Start | Integrate SDK to Radiant Media Player(RMP) via Vue
+
+> This method is not recommended due to compatibility issues.  
+> Please include `Mlytics SDK` and `RMP` scripts in `public/index.html` instead.  
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/html/README.md).
 
 ## Include player script
 
@@ -136,4 +140,4 @@ After video played, you can check out streaming analytics at our portal.
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue.js)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/npm)
