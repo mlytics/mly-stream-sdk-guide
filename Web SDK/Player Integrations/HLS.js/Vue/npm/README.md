@@ -1,11 +1,15 @@
-# Quick Start | Integrate SDK to HLS.js via Vue.js
+# Quick Start | Integrate SDK to HLS.js via Vue
+
+> This method is not recommended due to compatibility issues.  
+> Please include `Mlytics SDK` and `HLS.js` scripts in `public/index.html` instead.  
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/Vue/html/README.md).
 
 ## Install HLS.js
 
 Install the latest `HLS.js` package.
 
 ```bash
-npm install @mlytics/lib-hls.js
+npm install hls.js@1.4.14
 ```
 
 ## Install SDK

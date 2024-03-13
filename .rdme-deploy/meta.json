@@ -30,9 +30,9 @@
         "slug": "web-player-hlsjs-vanilla"
     },
     {
-        "file_path": "Web SDK/Player Integrations/HLS.js/Vue.js/README.md",
+        "file_path": "Web SDK/Player Integrations/HLS.js/Vue/html/README.md",
         "category": "63d9d34969da0c007a7219be",
-        "title": "Vue.js",
+        "title": "Vue",
         "slug": "web-player-hlsjs-vuejs"
     },
     {
