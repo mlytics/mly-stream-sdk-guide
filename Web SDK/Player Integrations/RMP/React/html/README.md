@@ -1,6 +1,6 @@
-# Quick Start | Integrate SDK to Radiant Media Player(RMP) via React.js
+# Quick Start | Integrate SDK to Radiant Media Player(RMP) via React
 
-## Include player script
+## Include Radiant Media Player(RMP)
 
 In `public/index.html` file, add `RMP` as an external library.
 
@@ -11,49 +11,31 @@ In `public/index.html` file, add `RMP` as an external library.
 </head>
 ```
 
-## Include config script
+## Include SDK
 
-In `public/index.html`, append config script file to the tail part of `<head>` tag.
+In `public/index.html`, append config script and pre-built bundled scripts to the tail part of `<head>` tag.
 
 ```html
 <head>
   ...
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/rmp-hls.min.js"></script>
 </head>
-```
-
-## Install SDK
-
-Install the bundled package.
-
-```bash
-npm install @mlytics/p2sp-sdk
-```
-
-## Bind SDK
-
-Add `RMP` into our SDK. To do this, use `RadiantMPHlsPlugin.register()` from SDK module. Here's an example showing how you could register the `RMP`:
-
-```javascript
-import {RadiantMPHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
-
-RadiantMPHlsPlugin.register(window.RadiantMP);
 ```
 
 ## Initialize SDK
 
-When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
+When page is loading, call `self.mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
 ```javascript
-import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
-
 import {useEffect} from 'react';
 
 import Player from './components/Player';
 
 const App = () => {
   useEffect(() => {
-    driver.initialize();
+    self.mlysdk.driver.initialize();
   }, []);
 
   return (
@@ -68,14 +50,12 @@ export default App;
 
 In order to use SDK to download the video, we need to build the `RMP` instance by SDK `RMP` Plugin.
 
-Call `driver.extensions.RadiantMPHlsPlayerPlugin.create()` to build a player adapter, passing the same arguments as you would when creating a `RMP` instance.
+Call `self.mlysdk.driver.extensions.RadiantMPHlsPlayerPlugin.create()` to build a player adapter, passing the same arguments as you would when creating a `RMP` instance.
 
 You may receive `RMP` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
 ```javascript
 import {useEffect, useRef} from 'react';
-
-import {driver} from '@mlytics/p2sp-sdk/driver/peripheral/player/rmp/streaming/hls/bundle';
 
 const Player = () => {
   const videoRef = useRef(null);
@@ -84,13 +64,13 @@ const Player = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (!playerRef.current) {
-      const adapter = driver.extensions.RadiantMPHlsPlayerPlugin.create({
+      const adapter = self.mlysdk.driver.extensions.RadiantMPHlsPlayerPlugin.create({
         elementID: 'video',
         playerOptions: {
             src: {
               hls: '{PLAYLIST_URL}'
             },
-            licenseKey: '{LICENSE_KEY}',
+            licenseKey: '{YOUR_RMP_LICENSE_KEY}',
             autoplay: true,
             width: 640,
             height: 360
@@ -118,6 +98,9 @@ export default Player;
 
 After video played, you can check out streaming analytics at our portal.
 
+> We highly recommend including `Mlytics SDK` and `RMP` scripts in `public/index.html` instead of installing with npm.  
+> If you do prefer to use package management, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/npm/README.md).
+
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React.js)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/html)
