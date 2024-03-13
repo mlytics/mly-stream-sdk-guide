@@ -36,7 +36,7 @@ import {useEffect} from 'react';
 
 import Player from './components/Player';
 
-function App () {
+const App = () => {
   useEffect(() => {
     self.mlysdk.driver.initialize();
   }, []);
@@ -44,7 +44,7 @@ function App () {
   return (
     <><Player /></>
   );
-}
+};
 
 export default App;
 ```

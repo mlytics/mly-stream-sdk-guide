@@ -1,19 +1,13 @@
 import {useEffect, useState} from 'react';
 
-import Hls from '@mlytics/lib-hls.js';
-
-import {driver, HlsjsHlsPlugin} from '@mlytics/p2sp-sdk/driver/peripheral/player/hlsjs/streaming/hls/bundle';
-
 import './App.css';
 import Player from './components/Player';
 
-HlsjsHlsPlugin.register(Hls);
-
-function App() {
+const App = () => {
     const [options, setOptions] = useState(null);
 
     useEffect(() => {
-        driver.initialize();
+        self.mlysdk.driver.initialize();
         setOptions({
             sourceUrl: 'https://1001642588942-cloudfront-z6frgspx.d-apm.com/hls/5ec5f77c-ba77-4054-af5a-90431f7e9904.mp4/5ec5f77c-ba77-4054-af5a-90431f7e9904.m3u8'
         });
@@ -27,6 +21,6 @@ function App() {
             </header>
         </div>
     );
-}
+};
 
 export default App;
