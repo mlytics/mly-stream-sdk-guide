@@ -99,8 +99,8 @@ export default Player;
 After video played, you can check out streaming analytics at our portal.
 
 > We highly recommend including `Mlytics SDK` and `RMP` scripts in `public/index.html` instead of installing with npm.  
-> If you do prefer to use package management, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/npm/README.md).
+> If you do prefer to use package management, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/RMP/React/npm/README.md).
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/html)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/RMP/React/html)

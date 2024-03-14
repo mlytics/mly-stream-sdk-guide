@@ -55,4 +55,4 @@ After video played, you can check out streaming analytics at our portal.
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vanilla)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/RMP/Vanilla)

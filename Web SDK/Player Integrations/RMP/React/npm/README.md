@@ -2,7 +2,7 @@
 
 > This method is not recommended due to compatibility issues.  
 > Please include `Mlytics SDK` and `RMP` scripts in `public/index.html` instead.  
-> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/html/README.md).
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/RMP/React/html/README.md).
 
 ## Include player script
 
@@ -124,4 +124,4 @@ After video played, you can check out streaming analytics at our portal.
 
 ## Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/React/npm)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/RMP/React/npm)

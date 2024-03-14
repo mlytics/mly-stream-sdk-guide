@@ -2,7 +2,7 @@
 
 > This method is not recommended due to compatibility issues.  
 > Please include `Mlytics SDK` and `HLS.js` scripts in `public/index.html` instead.  
-> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/React/html/README.md).
+> For more details, please see [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/HLS.js/React/html/README.md).
 
 ## Install HLS.js
 
@@ -118,4 +118,4 @@ Now start the service and try to watch request logs in a browser. You could find
 
 # Full example
 
-See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/React/npm)
+See [Demo](https://github.com/mlytics/mly-stream-sdk-guide/tree/new/pwa_script_in_html/Web%20SDK/Player%20Integrations/HLS.js/React/npm)
