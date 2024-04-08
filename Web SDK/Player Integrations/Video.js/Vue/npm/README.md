@@ -1,12 +1,12 @@
 # Quick Start | Integrate SDK to Video.js via Vue
 
-> This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues.  
-> It is highly recommended that integration by including `driver` and `Video.js` scripts in `public/index.html` instead.
+> ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including `driver` and `Video.js` scripts in `public/index.html` instead.
 
 ## Install Video.js
 
 Install `Video.js` package.
-> We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
+
+> ⚠️ We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
 
 ```bash
 npm install video.js@7.21.5
@@ -65,7 +65,7 @@ VideojsHlsPlugin.register(videojs);
 
 When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -95,7 +95,7 @@ Call `driver.extensions.VideojsHlsPlayerPlugin.create()` to build a player adapt
 
 You may receive `Video.js` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <div>
       <video ref="video" class="video-js" style="width: 100%; maxWidth: 500px"></video>

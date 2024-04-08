@@ -24,7 +24,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 
 When page is loading, call `self.mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -52,7 +52,7 @@ Call `self.mlysdk.driver.extensions.RadiantMPHlsPlayerPlugin.create()` to build 
 
 You may receive `RMP` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <div id="video" style="width: 100%; maxWidth: 800px"></div>
 </template>
@@ -91,8 +91,8 @@ export default {
 
 After video played, you can check out streaming analytics at our portal.
 
-> It is highly recommended that integration by including `driver` and `RMP` scripts in `public/index.html` instead of installing packaged via NPM.  
-> If you do prefer to integrate entirely using NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/npm/README.md).
+> It is highly recommended to integrate by including `driver` and `RMP` scripts in `public/index.html` instead of installing packags via NPM.  
+> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/npm).
 
 ## Full example
 

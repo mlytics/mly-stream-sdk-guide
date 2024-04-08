@@ -1,7 +1,6 @@
 # Quick Start | Integrate SDK to DPlayer via React
 
-> This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues.  
-> It is highly recommended that integration by including `driver` and `DPlayer` scripts in `public/index.html` instead.
+> ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including the `driver` and `DPlayer` scripts in `public/index.html` instead.
 
 ## Install DPlayer
 
