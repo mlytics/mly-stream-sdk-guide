@@ -5,7 +5,8 @@ module.exports = {
         browser: true
     },
     parserOptions: {
-        parser: '@babel/eslint-parser'
+        parser: '@babel/eslint-parser',
+        requireConfigFile: false
     },
     extends: [
         'plugin:vue/vue3-essential',

@@ -2,8 +2,9 @@
 
 ## Install HLS.js
 
-In `public/index.html`, append `Video.js` scripts to the tail part of `<head>` tag.
-> We are currently supporting `HLS.js` of which version should be higher than `v1.4.14`.
+In `public/index.html`, append `HLS.js` scripts to the tail part of `<head>` tag.
+
+> ⚠️ We are currently supporting `HLS.js` of which version should be `v1.4.14` and above.
 
 ```html
 <head>
@@ -29,7 +30,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 
 When page is loading, call `self.mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -57,7 +58,7 @@ Call `self.mlysdk.driver.extensions.HlsjsHlsPlayerPlugin.create()` to build a pl
 
 You may receive `HLS.js` instance by calling `adapter.protocol`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <video id="video" ref="videoRef" controls autoplay width="800"></video>
 </template>
@@ -91,8 +92,8 @@ export default {
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for, would be one of the CDN domains in stream settings rather than the origin domain.
 
-> It is highly recommended that integration by including `driver` and `HLS.js` scripts in `public/index.html` instead of installing packaged via NPM.  
-> If you do prefer to integrate entirely using NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/Vue/npm/README.md).
+> It is highly recommended to integrate by including `driver` and `HLS.js` scripts in `public/index.html` instead of installing packages via NPM.
+> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/HLS.js/Vue/npm).
 
 # Full example
 

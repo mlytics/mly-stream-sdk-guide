@@ -1,7 +1,6 @@
 # Quick Start | Integrate SDK to DPlayer via Vue
 
-> This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues.  
-> It is highly recommended that integration by including `driver` and `DPlayer` scripts in `public/index.html` instead.
+> ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including `driver` and `DPlayer` scripts in `public/index.html` instead.
 
 ## Install DPlayer
 
@@ -64,7 +63,7 @@ DPlayerHlsPlugin.register(DPlayer);
 
 When page is loading, call `driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -94,7 +93,7 @@ Call `driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a player adapt
 
 You may receive `DPlayer` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <div id="video" ref="videoRef"></div>
 </template>

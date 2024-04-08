@@ -3,7 +3,8 @@
 ## Include Video.js
 
 In `public/index.html`, append `Video.js` scripts to the tail part of `<head>` tag.
-> We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
+
+> ⚠️ We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
 
 ```html
 <head>
@@ -31,7 +32,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 
 When page is loading, call `self.mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -59,7 +60,7 @@ Call `self.mlysdk.driver.extensions.VideojsHlsPlayerPlugin.create()` to build a 
 
 You may receive `Video.js` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <div>
       <video ref="video" class="video-js" style="width: 100%; maxWidth: 500px"></video>
@@ -100,8 +101,8 @@ export default {
 
 Now start the service and view the request log in your browser. You should be able to find domains with `.m3u8` and `.ts` extension from one of the CDN domains configured in the stream settings.
 
-> It is highly recommended that integration by including `driver` and `Video.js` scripts in `public/index.html` instead of installing packaged via NPM.  
-> If you do prefer to integrate entirely using NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue/npm/README.md).
+> It is highly recommended to integrate by including `driver` and `Video.js` scripts in `public/index.html` instead of installing packages via NPM.  
+> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue/npm).
 
 ## Full example
 

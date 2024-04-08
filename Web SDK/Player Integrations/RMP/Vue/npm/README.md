@@ -1,7 +1,6 @@
 # Quick Start | Integrate SDK to Radiant Media Player(RMP) via Vue
 
-> This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues.  
-> It is highly recommended that integration by including `driver` and `RMP` scripts in `public/index.html` instead.
+> ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including `driver` and `RMP` scripts in `public/index.html` instead.
 
 ## Include player script
 

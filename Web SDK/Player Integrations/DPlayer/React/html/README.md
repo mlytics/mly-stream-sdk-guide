@@ -18,7 +18,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 ```html
 <head>
   ...
-  <script src="https://sdkjs.fusioncdn.com/cehcdiphseaa0coe0c10-mlysdk.js"></script>
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/dplayer-hls.min.js"></script>
 </head>
@@ -98,8 +98,8 @@ export default Player;
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for, would be one of the CDN domains in stream settings rather than the origin domain.
 
-> It is highly recommended that integration by including `driver` and `DPlayer` scripts in `public/index.html` instead of installing packaged via NPM.  
-> If you do prefer to integrate entirely using NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/React/npm/README.md).
+> It is highly recommended to integrate by including the `driver` and `DPlayer` scripts in `public/index.html` instead of installing packages via NPM.
+> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/React/npm).
 
 ## Full example
 

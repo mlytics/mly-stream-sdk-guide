@@ -18,7 +18,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 ```html
 <head>
   ...
-  <script src="https://sdkjs.fusioncdn.com/cehcdiphseaa0coe0c10-mlysdk.js"></script>
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/dplayer-hls.min.js"></script>
 </head>
@@ -28,7 +28,7 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
 
 When page is loading, call `self.mlysdk.driver.initialize()` first. Here's an example showing how you could initialize SDK with JavaScript.
 
-```javascript
+```vue
 <template>
   <Player />
 </template>
@@ -56,7 +56,7 @@ Call `self.mlysdk.driver.extensions.DPlayerHlsPlayerPlugin.create()` to build a 
 
 You may receive `DPlayer` instance by calling `adapter.player`. Here's an example showing how you could create player adapter with JavaScript.
 
-```javascript
+```vue
 <template>
   <div id="video" ref="videoRef"></div>
 </template>
@@ -93,8 +93,8 @@ export default {
 
 Now start the service and view the request log in your browser. You should be able to find domains with `.m3u8` and `.ts` extension from one of the CDN domains configured in the stream settings.
 
-> It is highly recommended that integration by including `driver` and `DPlayer` scripts in `public/index.html` instead of installing packaged via NPM.  
-> If you do prefer to integrate entirely using NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/Vue/npm/README.md).
+> It is highly recommended to integrate by including the `driver` and `DPlayer` scripts in `public/index.html` instead of installing packages via NPM.
+> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/DPlayer/Vue/npm).
 
 ## Full example
 
