@@ -201,6 +201,7 @@ dist
 # Local Testing
 .env
 .yalc/
+build/
 yalc.lock
 package-lock.json
 pnpm-lock.yaml
