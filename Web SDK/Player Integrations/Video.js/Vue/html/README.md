@@ -101,8 +101,7 @@ export default {
 
 Now start the service and view the request log in your browser. You should be able to find domains with `.m3u8` and `.ts` extension from one of the CDN domains configured in the stream settings.
 
-> It is highly recommended to integrate by including `driver` and `Video.js` scripts in `public/index.html` instead of installing packages via NPM.  
-> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue/npm).
+> It is highly recommended to integrate by including the `driver` and `Video.js` scripts in `public/index.html` instead of installing packages via NPM. If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/Vue/npm).
 
 ## Full example
 

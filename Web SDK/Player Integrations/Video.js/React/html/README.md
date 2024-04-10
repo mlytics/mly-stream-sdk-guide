@@ -103,8 +103,7 @@ export default Player;
 
 Now start the service and try to watch request logs in a browser. You could find that the domains in urls of `.m3u8` and `.ts` files, video player seeks for, would be one of the CDN domains in stream settings rather than the origin domain.
 
-> It is highly recommended to integrate by including `driver` and `Video.js` scripts in `public/index.html` instead of installing packages via NPM.  
-> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/React/npm).
+> It is highly recommended to integrate by including the `driver` and `Video.js` scripts in `public/index.html` instead of installing packages via NPM. If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/Video.js/React/npm).
 
 ## Full example
 
