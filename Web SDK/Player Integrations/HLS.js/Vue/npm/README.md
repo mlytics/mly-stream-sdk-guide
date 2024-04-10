@@ -1,14 +1,13 @@
 # Quick Start | Integrate SDK to HLS.js via Vue
 
-> This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues.  
-> It is highly recommended that integration by including `driver` and `HLS.js` scripts in `public/index.html` instead.
+> ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including `driver` and `HLS.js` scripts in `public/index.html` instead.
 
 ## Install HLS.js
 
 Install the latest `HLS.js` package.
 
 ```bash
-npm install hls.js@1.4.14
+npm install hls.js@1.5.7
 ```
 
 ## Install SDK

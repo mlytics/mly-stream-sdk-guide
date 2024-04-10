@@ -91,8 +91,7 @@ export default {
 
 After video played, you can check out streaming analytics at our portal.
 
-> It is highly recommended to integrate by including `driver` and `RMP` scripts in `public/index.html` instead of installing packags via NPM.  
-> If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/npm).
+> It is highly recommended to integrate by including the `driver` and `RMP` scripts in `public/index.html` instead of installing packages via NPM. If you do prefer to integrate entirely via NPM, please see example [here](https://github.com/mlytics/mly-stream-sdk-guide/tree/main/Web%20SDK/Player%20Integrations/RMP/Vue/npm).
 
 ## Full example
 

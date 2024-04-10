@@ -3,6 +3,7 @@
 ## Install Video.js
 
 Include `Video.js` script.
+
 > We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
 
 ```html
