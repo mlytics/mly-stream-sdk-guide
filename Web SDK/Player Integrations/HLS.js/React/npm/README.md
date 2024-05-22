@@ -15,7 +15,7 @@ npm install hls.js@1.5.7
 Install the bundled package.
 
 ```bash
-npm install @mlytics/p2sp-sdk
+npm install @mlytics/p2sp-sdk@{VERSION} --save-exact
 ```
 
 ## Include config script

@@ -29,7 +29,7 @@ In `public/index.html`, append config script file to the tail part of `<head>` t
 Install the bundled package.
 
 ```bash
-npm install @mlytics/p2sp-sdk
+npm install @mlytics/p2sp-sdk@{VERSION} --save-exact
 ```
 
 ## Bind SDK

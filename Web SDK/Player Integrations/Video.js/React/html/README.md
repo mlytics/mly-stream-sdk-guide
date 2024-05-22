@@ -4,7 +4,7 @@
 
 In `public/index.html`, append `Video.js` scripts to the tail part of `<head>` tag.
 
-> ⚠️ We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
+> ⚠️ We are currently supporting `Video.js` of which version is not greater than `v8.9.0`.
 
 ```html
 <head>

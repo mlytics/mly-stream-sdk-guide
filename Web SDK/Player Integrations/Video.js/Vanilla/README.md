@@ -4,7 +4,7 @@
 
 Include `Video.js` script.
 
-> We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
+> ⚠️ We are currently supporting `Video.js` of which version is not greater than `v8.9.0`.
 
 ```html
 <script src="https://vjs.fusioncdn.com/7.21.5/video.min.js"></script>

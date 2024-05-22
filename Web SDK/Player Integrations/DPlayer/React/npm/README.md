@@ -15,7 +15,7 @@ npm install dplayer
 Install the bundled package.
 
 ```bash
-npm install @mlytics/p2sp-sdk
+npm install @mlytics/p2sp-sdk@{VERSION} --save-exact
 ```
 
 ## Include config script

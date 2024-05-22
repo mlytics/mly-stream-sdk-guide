@@ -6,7 +6,7 @@
 
 Install `Video.js` package.
 
-> ⚠️ We are currently supporting `Video.js` of which version should be lower than `v8.0.0`.
+> ⚠️ We are currently supporting `Video.js` of which version is not greater than `v8.9.0`.
 
 ```bash
 npm install video.js@7.21.5
@@ -17,7 +17,7 @@ npm install video.js@7.21.5
 Install the bundled package.
 
 ```bash
-npm install @mlytics/p2sp-sdk
+npm install @mlytics/p2sp-sdk@{VERSION} --save-exact
 ```
 
 ## Install babel plugin
