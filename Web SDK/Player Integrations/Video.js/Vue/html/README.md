@@ -1,6 +1,6 @@
 # Quick Start | Integrate SDK to Video.js via Vue.js
 
-## Include Video.js
+## Install Video.js
 
 In `public/index.html`, append `Video.js` scripts to the tail part of `<head>` tag.
 
@@ -9,13 +9,13 @@ In `public/index.html`, append `Video.js` scripts to the tail part of `<head>` t
 ```html
 <head>
   ...
-  <link href="https://vjs.fusioncdn.com/7.21.5/video-js.min.css" rel="stylesheet" />
+  <link href="https://vjs.fusioncdn.com/{VIDEOJS_VERSION}/video-js.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
-  <script src="https://vjs.fusioncdn.com/7.21.5/video.min.js"></script>
+  <script src="https://vjs.fusioncdn.com/{VIDEOJS_VERSION}/video.min.js"></script>
 </head>
 ```
 
-## Include SDK
+## Install SDK
 
 In `public/index.html`, append config script and pre-built bundled scripts to the tail part of `<head>` tag.
 
