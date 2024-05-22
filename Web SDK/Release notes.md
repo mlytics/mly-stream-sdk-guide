@@ -1,13 +1,19 @@
 # Current release
 
+## v0.17.0
+
+New Features
+
+1. Support Video.js version 8.9.0.
+
+# Previous releases
+
 ## v0.16.2
 
 Fixes and Improvements
 
 1. Fix that HLS.js demux worker failure when SDK is compiled via the frontend tool Vite.
 2. Optimize HLS.js configurations to use relative latency by default under regular latency.
-
-# Previous releases
 
 ## v0.16.1
 
