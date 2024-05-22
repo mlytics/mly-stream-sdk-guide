@@ -7,7 +7,9 @@ Include `Video.js` script.
 > ⚠️ We are currently supporting `Video.js` of which version is not greater than `v8.9.0`.
 
 ```html
-<script src="https://vjs.fusioncdn.com/7.21.5/video.min.js"></script>
+<link href="https://vjs.fusioncdn.com/{VIDEOJS_VERSION}/video-js.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+<script src="https://vjs.fusioncdn.com/{VIDEOJS_VERSION}/video.min.js"></script>
 ```
 
 ## Install SDK
