@@ -17,6 +17,10 @@ If your website is a **simple HTML page** or if you want to perform a quick test
 ```javascript
 self.importScripts('https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/integration/streaming/swproxy-hls.min.js');
 ```
+Or include SDK with specific version as following script
+```javascript
+self.importScripts('https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/integration/streaming/swproxy-hls.min.js');
+```
 
 Alternatively, if your website is built with a frontend framework such as [Vue.js](https://vuejs.org/) or [React.js](https://react.dev/), while you can consider using the same approach as mentioned above, there might be issues if the version of SDK installed via npm is different from the one imported in the Service Worker script. For a more accurate and long-term approach, please create the following file and name it `swproxy.js`.
 

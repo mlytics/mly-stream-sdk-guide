@@ -1,13 +1,16 @@
 # Quick Start | Integrate SDK to Radiant Media Player(RMP) via Vue
 
-## Include Radiant Media Player(RMP)
+## Install Radiant Media Player(RMP)
 
 In `public/index.html` file, add `RMP` as an external library.
 
 ```html
 <head>
   ...
-  <script src="https://cdn.radiantmediatechs.com/rmp/9.6.8/js/rmp.min.js"></script>## Include SDK
+  <script src="https://cdn.radiantmediatechs.com/rmp/9.6.8/js/rmp.min.js"></script>
+```
+
+## Install SDK
 
 In `public/index.html`, append config script and pre-built bundled scripts to the tail part of `<head>` tag.
 
@@ -17,6 +20,15 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/rmp-hls.min.js"></script>
+</head>
+```
+Or include SDK with specific version as following script.
+```html
+<head>
+  ...
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/driver.min.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/peripheral/player/rmp-hls.min.js"></script>
 </head>
 ```
 

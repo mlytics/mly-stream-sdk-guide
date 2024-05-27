@@ -2,7 +2,7 @@
 
 > ⚠️ This way of integration directly via NPM is experimental due to its requirement for complex configurations and potential compatibility issues. It is highly recommended to integrate by including `driver` and `RMP` scripts in `public/index.html` instead.
 
-## Include player script
+## Install Radiant Media Player(RMP)
 
 In `public/index.html` file, add `RMP` as an external library.
 
@@ -29,7 +29,7 @@ In `public/index.html`, append config script file to the tail part of `<head>` t
 Install the bundled package.
 
 ```bash
-npm install npm install @mlytics/p2sp-sdk@{SDK_VERSION} --save-exact --save-exact
+npm install @mlytics/p2sp-sdk@{SDK_VERSION} --save-exact
 ```
 
 ## Bind SDK

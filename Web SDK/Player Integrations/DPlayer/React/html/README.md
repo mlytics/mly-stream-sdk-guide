@@ -1,6 +1,6 @@
 # Quick Start | Integrate SDK to DPlayer via React
 
-## Include DPlayer
+## Install DPlayer
 
 In `public/index.html`, append `DPlayer` scripts to the tail part of `<head>` tag.
 
@@ -11,7 +11,7 @@ In `public/index.html`, append `DPlayer` scripts to the tail part of `<head>` ta
 </head>
 ```
 
-## Include SDK
+## Install SDK
 
 In `public/index.html`, append config script and pre-built bundled scripts to the tail part of `<head>` tag.
 
@@ -21,6 +21,15 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
   <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/dplayer-hls.min.js"></script>
+</head>
+```
+Or include SDK with specific version as following script.
+```html
+<head>
+  ...
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/driver.min.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/peripheral/player/dplayer-hls.min.js"></script>
 </head>
 ```
 
