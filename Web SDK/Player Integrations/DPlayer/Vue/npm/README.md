@@ -15,7 +15,7 @@ npm install dplayer
 Install the bundled package.
 
 ```bash
-npm install npm install @mlytics/p2sp-sdk@{SDK_VERSION} --save-exact --save-exact
+npm install @mlytics/p2sp-sdk@{SDK_VERSION} --save-exact
 ```
 
 ## Install babel plugin

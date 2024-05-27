@@ -27,6 +27,15 @@ In `public/index.html`, append config script and pre-built bundled scripts to th
   <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/videojs-hls.min.js"></script>
 </head>
 ```
+Or include SDK with specific version as following script.
+```html
+<head>
+  ...
+  <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/driver.min.js"></script>
+  <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSION}/bundle/peripheral/player/videojs-hls.min.js"></script>
+</head>
+```
 
 ## Initialize SDK
 
