@@ -4,8 +4,10 @@
 
 Include the latest `HLS.js` script.
 
+> ⚠️ We are currently supporting `HLS.js` of which version should be `v1.5.7` or above.
+
 ```html
-<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/lib-hls.js@latest/dist/hls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.7"></script>
 ```
 
 ## Install SDK
@@ -16,6 +18,12 @@ Include the pre-built bundled scripts.
 <script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/driver.min.js"></script>
 <script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@latest/bundle/peripheral/player/hlsjs-hls.min.js"></script>
+```
+Or include SDK with specific version as following script.
+```html
+<script src="https://sdkjs.fusioncdn.com/{CLIENT_ID}-mlysdk.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSOIN}/bundle/driver.min.js"></script>
+<script src="https://jsdelivr.fusioncdn.com/npm/@mlytics/p2sp-sdk@{SDK_VERSOIN}/bundle/peripheral/player/hlsjs-hls.min.js"></script>
 ```
 
 ## Initialize SDK
