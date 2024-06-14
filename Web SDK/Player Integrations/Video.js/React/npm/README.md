@@ -6,7 +6,7 @@
 
 Install `Video.js` package.
 
-> ⚠️ We are currently supporting `Video.js` of which version is not greater than `v8.9.0`.
+> ⚠️ We are currently supporting `Video.js` of which version is `v8.9.0` or below.
 
 ```bash
 npm install video.js@{VIDEOJS_VERSION}
