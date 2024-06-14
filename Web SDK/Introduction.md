@@ -5,28 +5,31 @@ It is closely connected to Mlytics Multi-CDN technology to help you quickly impl
 
 # Introduction SDK
 
-Mlytics SDK is a software package based on HLS protocol and built on HTML5 players with additional Mlytics specific functionality.
+Mlytics SDK is a software package based on the HLS protocol and built for HTML5 video players, providing additional Mlytics-specific functionality.
 
 - ### Video streaming analysis
-    Mlytics SDK collects metrics during the video and Mlytics portal will generate several charts relevant to video engagement, QoS and QoE after streaming.
+    Mlytics SDK collects metrics during video playback, and Mlytics portal will generate several charts relevant to video engagement, Quality of Service (QoS), and Quality of Experience (QoE) after streaming.
 
 - ### In-stream CDN switching
-    For the benefit of availability, Mlytics SDK switches CDN for every attempt of resource downloading with customized CDN set. You can specify the CDN set by setting which CDN provider you prefer to use or assigning your own CDN, and set the priority of each CDN in Mlytics portal.  
-    The switching algorithms will phase out the CDN which has poorer performance based on end user's own network environment and the decision will last until the page is refreshed.
+    To enhance availability, Mlytics SDK switches CDNs for every resource download attempt using a customized CDN set. You can specify the CDN set by indicating your preferred CDN providers or assigning your own CDN, and set the priority of each CDN in Mlytics portal.  
 
-- ### P2P transmission (Experimental)
-    By using P2P transmission, every end user stands a chance of sharing loaded video manifests and segments to those who is watching the same video so that CDN traffic can be decreased to reach the purpose of cost reducing.
+    The switching algorithms will phase out underperforming CDNs based on the end-user's network environment, and this decision will persist until the page is refreshed.
 
-In summary, video player used to load manifests and segments through single CDN.  
+- <h3>Peer-to-Peer (P2P) transmission <img src="https://lh3.googleusercontent.com/d/1nNKX4q_FFGFZ4rL0oKiHy_fi1szJNIfG" /></h3>
+    By utilizing Peer-to-Peer (P2P) transmission, every end-user has the opportunity to share loaded video manifests and segments with others watching the same video. This approach can decrease CDN traffic and ultimately reduce costs.  
+
+    However, please note that P2P transmission is currently experimental.
+
+In summary, traditional video players load manifests and segments through a single CDN.  
 ![Before using SDk](https://lh3.googleusercontent.com/d/1EFiEk5hPNbqYimFHXlJT9uUil8rPvF_6)  
-After using Mlytics SDK, video player can now load manifests and segments through several sources to reduce the potential risks and the costs.  
+After integrating the Mlytics SDK, video players can now load manifests and segments from multiple sources, reducing potential risks and costs.  
 ![After using SDk](https://lh3.googleusercontent.com/d/1u5-FxCavfQvC-g_2rvhapFvCZelX6p6N)
 
 # Compatibility
 
 ## Browser
 
-Both **fetch API** used for in-stream CDN switching and **webRTC API** used for P2P transmission are incorporated into the HTML5 standard and broadly deployed in modern browsers.
+The **fetch API** used for in-stream CDN switching and the **WebRTC API** used for P2P transmission are both incorporated into the HTML5 standard and broadly supported by modern browsers.
 
 | Feature                 | Chrome | Firefox | macOS Safari | iOS Safari | Edge | IE   |
 | :---------------------- | :----- | :------ | :----------- | :--------- | :--- | :--- |
@@ -35,7 +38,7 @@ Both **fetch API** used for in-stream CDN switching and **webRTC API** used for 
 
 ## Video players
 
-Mlytics SDK currently supports several well-known video players. For the best experience, we suggest the version of each video player as following:
+Mlytics SDK currently supports several well-known video players. For the best experience, we recommend using the following versions of each video player:
 
 | Video Player | Supported Version       |
 | :----------- | :---------------------- |
@@ -44,7 +47,7 @@ Mlytics SDK currently supports several well-known video players. For the best ex
 | DPlayer      | **v1.27.1**             |
 
 > ⚠️ IMPORTANT  
-> Please note that Mlytics SDK adds functionality which only affects video delivery, you may obtain the instance of video player after initialization so that you can customize your own video player as usual, such as **styling, adding plugins for advertisement or others, modifying video player configurations**, etc.
+> Please note that Mlytics SDK adds functionality that solely affects video delivery. After initialization, you can obtain an instance of the video player, allowing you to customize your own video player as usual. This includes **styling**, **adding plugins for advertisements or other purposes**, **modifying video player configurations**, and more.
 > 
 > Take `video.js`, for instance. If you used to initialize `video.js` like this:
 > 
@@ -67,7 +70,7 @@ Mlytics SDK currently supports several well-known video players. For the best ex
 > </script>
 > ```
 > 
-> When using Mlytics SDK, you can pass the same options and obtain `video.js` instance by calling `.player` after initialization:
+> When using Mlytics SDK, you can pass the same options and obtain the `video.js` instance by calling `.player` after initialization:
 > 
 > ```html
 > <video id="my-player"></video>
@@ -91,18 +94,18 @@ Mlytics SDK currently supports several well-known video players. For the best ex
 > 
 > See more information about integration with `video.js` [here](./web-player-videojs-vanilla).
 
-## PWA
+## Progressive Web App (PWA)
 
-Although Mlytics SDK gets along with two most popular PWA development tools. One is `React`; the other is `Vue.js`. Please be aware that using frameworks, which is based from the PWA development tools asforesaid, might not be satisfactory.
+Mlytics SDK is compatible with the two most popular Progressive Web App (PWA) development tools: `React` and `Vue.js`. However, please note that installing Mlytics SDK via npm might not provide a satisfactory experience when using frameworks derived from the aforementioned PWA development tools. Therefore, we recommend including the Mlytics SDK using static script tags in `public/index.html` instead.
 
 # Q&A
 
 ### Q: How to verified whether Mlytics SDK is working or not?
-#### A: Please open Devtools in your browser, switch to the Network panel and filter out the needed request with `Fetch/XHR` tag.
+#### A: Please open the Developer Tools in your browser, switch to the Network panel, and filter the request using with `Fetch/XHR` tag to locate the needed request.
 ![How to switch to Network panel](https://lh3.googleusercontent.com/d/1Su8pvrnmU-y5aOkQTHVGU64IWD7x3pkJ)
-#### You may observe that manifests and segments were downloaded through different domains. And for those requests which was made by Mlytics SDK will follow by an addition query string called `via_mlysdk`.
+#### You may observe that manifests and segments were downloaded through different domains. Requests made by Mlytics SDK will be followed by an additional query string called `via_mlysdk`.
 ![Example when using SDK](https://lh3.googleusercontent.com/d/1oUqc4wr0F3VxFoYsBjgfjVRi5R-GoEj2)
 
 ### Q: How can I tell the version of Mlytics SDK I'm using?
-#### A: There is a interface from Mlytics SDK tells which version are you using. Type `driver.settings.software.version` in **Devtools Console Panel** or call it in script block and print it out.
+#### A: Mlytics SDK provides an interface to check the version you're using. Open the Developer Tools in your browser, switch to the Console panel, and type `driver.settings.software.version`. Alternatively, you can call it within a script block and print out the version.
 ![How to check mlytics sdk version](https://lh3.googleusercontent.com/d/1aopXsJQGNl95tbdf7g2V0ZvPHhw9Oq61)
