@@ -13,17 +13,17 @@ Mlytics SDK is a software package based on the HLS protocol and built for HTML5 
 - ### In-stream CDN switching
     To enhance availability, Mlytics SDK switches CDNs for every resource download attempt using a customized CDN set. You can specify the CDN set by indicating your preferred CDN providers or assigning your own CDN, and set the priority of each CDN in Mlytics portal.  
 
-    The switching algorithms will phase out underperforming CDNs based on the end-user's network environment, and this decision will persist until the page is refreshed.
+    The switching algorithms will phase out underperformed CDNs based on the end-user's network environment, and this decision will persist until the page is refreshed.
 
-- <h3>Peer-to-Peer (P2P) transmission <img src="https://lh3.googleusercontent.com/d/1nNKX4q_FFGFZ4rL0oKiHy_fi1szJNIfG" /></h3>
+- <h3>Peer-to-Peer (P2P) transmission <img src="https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/introduction_p2p_transmission_beaker.png" /></h3>
     By utilizing Peer-to-Peer (P2P) transmission, every end-user has the opportunity to share loaded video manifests and segments with others watching the same video. This approach can decrease CDN traffic and ultimately reduce costs.  
 
     However, please note that P2P transmission is currently experimental.
 
 In summary, traditional video players load manifests and segments through a single CDN.  
-![Before using SDk](https://lh3.googleusercontent.com/d/1EFiEk5hPNbqYimFHXlJT9uUil8rPvF_6)  
+![Before using SDk](https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/introduction_summary_without_sdk.png)  
 After integrating the Mlytics SDK, video players can now load manifests and segments from multiple sources, reducing potential risks and costs.  
-![After using SDk](https://lh3.googleusercontent.com/d/1u5-FxCavfQvC-g_2rvhapFvCZelX6p6N)
+![After using SDk](https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/introduction_summary_with_sdk.png)
 
 # Compatibility
 
@@ -31,17 +31,17 @@ After integrating the Mlytics SDK, video players can now load manifests and segm
 
 The **fetch API** used for in-stream CDN switching and the **WebRTC API** used for P2P transmission are both incorporated into the HTML5 standard and broadly supported by modern browsers.
 
-| Feature                 | Chrome | Firefox | macOS Safari | iOS Safari | Edge | IE   |
-| :---------------------- | :----- | :------ | :----------- | :--------- | :--- | :--- |
-| In-stream CDN switching | V      | V       | V            | V          | V    | V    |
-| P2P transmission        | V      | V       | V            | V          | V    | X    |
+| Feature                 | Chrome | Firefox | macOS Safari | iOS Safari | Edge | IE |
+|:------------------------|:-------|:--------|:-------------|:-----------|:-----|:---|
+| In-stream CDN switching | V      | V       | V            | V          | V    | V  |
+| P2P transmission        | V      | V       | V            | V          | V    | X  |
 
 ## Video players
 
 Mlytics SDK currently supports several well-known video players. For the best experience, we recommend using the following versions of each video player:
 
 | Video Player | Supported Version       |
-| :----------- | :---------------------- |
+|:-------------|:------------------------|
 | Video.js     | **v8.9.0** or **below** |
 | hls.js       | **v1.5.7** or **below** |
 | DPlayer      | **v1.27.1**             |
@@ -102,10 +102,10 @@ Mlytics SDK is compatible with the two most popular Progressive Web App (PWA) de
 
 ### Q: How to verified whether Mlytics SDK is working or not?
 #### A: Please open the Developer Tools in your browser, switch to the Network panel, and filter the request using with `Fetch/XHR` tag to locate the needed request.
-![How to switch to Network panel](https://lh3.googleusercontent.com/d/1Su8pvrnmU-y5aOkQTHVGU64IWD7x3pkJ)
+![How to switch to Network panel](https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/qa_devtool_network_panel.png)
 #### You may observe that manifests and segments were downloaded through different domains. Requests made by Mlytics SDK will be followed by an additional query string called `via_mlysdk`.
-![Example when using SDK](https://lh3.googleusercontent.com/d/1oUqc4wr0F3VxFoYsBjgfjVRi5R-GoEj2)
+![Example when using SDK](https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/qa_mlysdk_cdn_switching_demo.png)
 
 ### Q: How can I tell the version of Mlytics SDK I'm using?
 #### A: Mlytics SDK provides an interface to check the version you're using. Open the Developer Tools in your browser, switch to the Console panel, and type `driver.settings.software.version`. Alternatively, you can call it within a script block and print out the version.
-![How to check mlytics sdk version](https://lh3.googleusercontent.com/d/1aopXsJQGNl95tbdf7g2V0ZvPHhw9Oq61)
+![How to check mlytics sdk version](https://raw.githubusercontent.com/mlytics/mly-stream-sdk-guide/main/Web%20SDK/assets/qa_mlysdk_version_checking.png)
