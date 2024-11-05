@@ -6,8 +6,8 @@
 
 ```bash
 dependencies {
-    implementation 'io.github.vip-test:mlysdk:0.0.5'
-    implementation 'io.github.vip-test:exoplayer:0.0.6'
+    implementation 'com.mlytics.sdk.p2sp:mlysdk:0.2.0'
+    implementation 'com.mlytics.sdk.p2sp:exoplayer:0.0.2'
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation 'io.github.centrifugal:centrifuge-java:0.2.7'
     implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
